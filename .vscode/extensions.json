@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "onecentlin.laravel5-snippets",
+        "onecentlin.laravel-blade",
+        "austenc.laravel-blade-spacer",
+        "bmewburn.vscode-intelephense-client",
+        "stef-k.laravel-goto-controller",
+        "codingyu.laravel-goto-view",
+        "sibiraj-s.vscode-scss-formatter"
+    ]
+}
