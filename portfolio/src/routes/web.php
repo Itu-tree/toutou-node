@@ -11,13 +11,19 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
+//laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php line 1163
+//Auth::routes();
 
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/player-transform', 'HomeController@showTransform')->name('player-transform');
-Route::post('/player-transform', 'HomeController@deleteTransform')->name('delete.player-transform');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/', 'PostController@index')->name('blog.top');
+Route::get('/post/{post}', 'PostController@show')->name('blog.post');
