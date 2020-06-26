@@ -17,14 +17,7 @@
                                             target="_blank" 　rel="noopener noreferrer">{{ $post->title }}</a>
                                     </h5>
                                     <div class="card-text">
-                                        <p><strong>距離 :</strong>
-                                            <br />
-                                            <a href="{{ route('admin.post.show',['post'=>$post->id]) }}" target="_blank"
-                                                　rel="noopener noreferrer">
-                                                {{$post->body}}</a>
-                                        </p>
-                                        <p><strong>いいね数 :</strong></p>
-                                        <p><strong>作成日 :</strong></p>
+                                        <p><strong>更新日 :{{ $post->updated_at }}</strong></p>
                                     </div>
                                 </div><!-- /.card-body -->
                             </div><!-- /.card -->

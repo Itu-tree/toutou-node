@@ -19,6 +19,7 @@ class PostsTableSeeder extends Seeder
             $post = new Post;
             $post->title = "test" . "public" . $i;
             $post->body = "test" . "public" . $i;
+            $post->mdbody = "test" . "public" . $i;
             $post->state = "public";
             $post->save();
         }
@@ -29,6 +30,7 @@ class PostsTableSeeder extends Seeder
             $post = new Post;
             $post->title = "test" . "draft" . $i;
             $post->body = "test" . "draft" . $i;
+            $post->mdbody = "test" . "draft" . $i;
             $post->state = "draft";
             $post->save();
         }

@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->uuid('id')->primary('id');
             $table->string('title');
             $table->text('body');
+            $table->text('mdbody');
             $table->string('state');
             $table->timestamps();
             $table->softDeletes();
