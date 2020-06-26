@@ -30,8 +30,9 @@ class PostController extends Controller
         return view('auth.post.index', ['posts' => $posts]);
     }
 
-    public function create(Post $post)
+    public function create()
     {
+        $post = Post::init();
         return view('auth.post.create', ['post' => $post]);
     }
 
