@@ -1924,6 +1924,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1931,9 +1939,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(mavon_editor__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = ({
   //   el: "#main",
   name: "editor",
+  props: ["mdbody"],
   data: function data() {
     return {
-      value: "",
+      value: this.mdbody,
       mdbody: "",
       htmlbody: "",
       toolbars: {
@@ -1974,6 +1983,23 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(mavon_editor__WEBPACK_IMPORTED_MO
     changeText: function changeText(value, reder) {
       this.mdbody = value;
       this.htmlbody = reder;
+    },
+    $imgAdd: function $imgAdd(pos, $file) {
+      // step 1. upload image to server.
+      var formdata = new FormData();
+      formdata.append("image", $file);
+      axios({
+        url: "server url",
+        method: "post",
+        data: formdata,
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }).then(function (url) {
+        // step 2. replace url ![...](./0) -> ![...](url)
+        // $vm.$img2Url. The details at the end of this page
+        $vm.$img2Url(pos, url);
+      });
     }
   }
 });
@@ -6456,7 +6482,7 @@ exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "@font-face{font-family:fontello;src:url(" + escape(__webpack_require__(/*! ../font/fontello.eot */ "./node_modules/mavon-editor/dist/font/fontello.eot")) + ");src:url(" + escape(__webpack_require__(/*! ../font/fontello.eot */ "./node_modules/mavon-editor/dist/font/fontello.eot")) + "#iefix) format(\"embedded-opentype\"),url(" + escape(__webpack_require__(/*! ../font/fontello.woff2 */ "./node_modules/mavon-editor/dist/font/fontello.woff2")) + ") format(\"woff2\"),url(" + escape(__webpack_require__(/*! ../font/fontello.woff */ "./node_modules/mavon-editor/dist/font/fontello.woff")) + ") format(\"woff\"),url(" + escape(__webpack_require__(/*! ../font/fontello.ttf */ "./node_modules/mavon-editor/dist/font/fontello.ttf")) + ") format(\"truetype\"),url(" + escape(__webpack_require__(/*! ../font/fontello.svg */ "./node_modules/mavon-editor/dist/font/fontello.svg")) + "#fontello) format(\"svg\");font-weight:400;font-style:normal}[class*=\" fa-mavon-\"]:before,[class^=fa-mavon-]:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-mavon-bold:before{content:\"\\E800\"}.fa-mavon-italic:before{content:\"\\E801\"}.fa-mavon-thumb-tack:before{content:\"\\E802\"}.fa-mavon-link:before{content:\"\\E803\"}.fa-mavon-picture-o:before{content:\"\\E804\"}.fa-mavon-repeat:before{content:\"\\E805\"}.fa-mavon-undo:before{content:\"\\E806\"}.fa-mavon-trash-o:before{content:\"\\E807\"}.fa-mavon-floppy-o:before{content:\"\\E808\"}.fa-mavon-compress:before{content:\"\\E809\"}.fa-mavon-eye:before{content:\"\\E80A\"}.fa-mavon-eye-slash:before{content:\"\\E80B\"}.fa-mavon-question-circle:before{content:\"\\E80C\"}.fa-mavon-times:before{content:\"\\E80D\"}.fa-mavon-align-left:before{content:\"\\E80F\"}.fa-mavon-align-center:before{content:\"\\E810\"}.fa-mavon-align-right:before{content:\"\\E811\"}.fa-mavon-arrows-alt:before{content:\"\\F0B2\"}.fa-mavon-bars:before{content:\"\\F0C9\"}.fa-mavon-list-ul:before{content:\"\\F0CA\"}.fa-mavon-list-ol:before{content:\"\\F0CB\"}.fa-mavon-strikethrough:before{content:\"\\F0CC\"}.fa-mavon-underline:before{content:\"\\F0CD\"}.fa-mavon-table:before{content:\"\\F0CE\"}.fa-mavon-columns:before{content:\"\\F0DB\"}.fa-mavon-quote-left:before{content:\"\\F10D\"}.fa-mavon-code:before{content:\"\\F121\"}.fa-mavon-superscript:before{content:\"\\F12B\"}.fa-mavon-subscript:before{content:\"\\F12C\"}.fa-mavon-header:before{content:\"\\F1DC\"}.fa-mavon-window-maximize:before{content:\"\\F2D0\"}.markdown-body strong{font-weight:bolder}.markdown-body .hljs-center{text-align:center}.markdown-body .hljs-right{text-align:right}.markdown-body .hljs-left{text-align:left}", ""]);
+exports.push([module.i, "@font-face {\n    font-family: fontello;\n    src: url(" + escape(__webpack_require__(/*! ../font/fontello.eot */ "./node_modules/mavon-editor/dist/font/fontello.eot")) + ");\n    src: url(" + escape(__webpack_require__(/*! ../font/fontello.eot */ "./node_modules/mavon-editor/dist/font/fontello.eot")) + "#iefix) format(\"embedded-opentype\"), url(" + escape(__webpack_require__(/*! ../font/fontello.woff2 */ "./node_modules/mavon-editor/dist/font/fontello.woff2")) + ") format(\"woff2\"),\n        url(" + escape(__webpack_require__(/*! ../font/fontello.woff */ "./node_modules/mavon-editor/dist/font/fontello.woff")) + ") format(\"woff\"), url(" + escape(__webpack_require__(/*! ../font/fontello.ttf */ "./node_modules/mavon-editor/dist/font/fontello.ttf")) + ") format(\"truetype\"),\n        url(" + escape(__webpack_require__(/*! ../font/fontello.svg */ "./node_modules/mavon-editor/dist/font/fontello.svg")) + "#fontello) format(\"svg\");\n    font-weight: 400;\n    font-style: normal;\n}\n[class*=\" fa-mavon-\"]:before,\n[class^=\"fa-mavon-\"]:before {\n    font-family: fontello;\n    font-style: normal;\n    font-weight: 400;\n    speak: none;\n    display: inline-block;\n    text-decoration: inherit;\n    width: 1em;\n    margin-right: 0.2em;\n    text-align: center;\n    font-variant: normal;\n    text-transform: none;\n    line-height: 1em;\n    margin-left: 0.2em;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n}\n.fa-mavon-bold:before {\n    content: \"\\E800\";\n}\n.fa-mavon-italic:before {\n    content: \"\\E801\";\n}\n.fa-mavon-thumb-tack:before {\n    content: \"\\E802\";\n}\n.fa-mavon-link:before {\n    content: \"\\E803\";\n}\n.fa-mavon-picture-o:before {\n    content: \"\\E804\";\n}\n.fa-mavon-repeat:before {\n    content: \"\\E805\";\n}\n.fa-mavon-undo:before {\n    content: \"\\E806\";\n}\n.fa-mavon-trash-o:before {\n    content: \"\\E807\";\n}\n.fa-mavon-floppy-o:before {\n    content: \"\\E808\";\n}\n.fa-mavon-compress:before {\n    content: \"\\E809\";\n}\n.fa-mavon-eye:before {\n    content: \"\\E80A\";\n}\n.fa-mavon-eye-slash:before {\n    content: \"\\E80B\";\n}\n.fa-mavon-question-circle:before {\n    content: \"\\E80C\";\n}\n.fa-mavon-times:before {\n    content: \"\\E80D\";\n}\n.fa-mavon-align-left:before {\n    content: \"\\E80F\";\n}\n.fa-mavon-align-center:before {\n    content: \"\\E810\";\n}\n.fa-mavon-align-right:before {\n    content: \"\\E811\";\n}\n.fa-mavon-arrows-alt:before {\n    content: \"\\F0B2\";\n}\n.fa-mavon-bars:before {\n    content: \"\\F0C9\";\n}\n.fa-mavon-list-ul:before {\n    content: \"\\F0CA\";\n}\n.fa-mavon-list-ol:before {\n    content: \"\\F0CB\";\n}\n.fa-mavon-strikethrough:before {\n    content: \"\\F0CC\";\n}\n.fa-mavon-underline:before {\n    content: \"\\F0CD\";\n}\n.fa-mavon-table:before {\n    content: \"\\F0CE\";\n}\n.fa-mavon-columns:before {\n    content: \"\\F0DB\";\n}\n.fa-mavon-quote-left:before {\n    content: \"\\F10D\";\n}\n.fa-mavon-code:before {\n    content: \"\\F121\";\n}\n.fa-mavon-superscript:before {\n    content: \"\\F12B\";\n}\n.fa-mavon-subscript:before {\n    content: \"\\F12C\";\n}\n.fa-mavon-header:before {\n    content: \"\\F1DC\";\n}\n.fa-mavon-window-maximize:before {\n    content: \"\\F2D0\";\n}\n.markdown-body strong {\n    font-weight: bolder;\n}\n.markdown-body .hljs-center {\n    text-align: center;\n}\n.markdown-body .hljs-right {\n    text-align: right;\n}\n.markdown-body .hljs-left {\n    text-align: left;\n}\n", ""]);
 
 // exports
 
@@ -38301,8 +38327,13 @@ var render = function() {
       { attrs: { id: "main" } },
       [
         _c("mavon-editor", {
+          ref: "md",
           attrs: { language: "en", toolbars: _vm.toolbars },
-          on: { change: _vm.changeText },
+          on: {
+            change: _vm.changeText,
+            imgAdd: _vm.$imgAdd,
+            imgDel: _vm.$imgDel
+          },
           model: {
             value: _vm.value,
             callback: function($$v) {
@@ -50602,7 +50633,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
-Vue.component('editor', __webpack_require__(/*! ./components/Editor.vue */ "./resources/js/components/Editor.vue")["default"]);
+Vue.component('editor', __webpack_require__(/*! ./components/Editor.vue */ "./resources/js/components/Editor.vue")["default"]); //Vue.component('show', require('./components/Show.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

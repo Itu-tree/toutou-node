@@ -43,13 +43,13 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $post = Post::create($request->only('title', 'body', 'state'));
+        $post = Post::create($request->only('title', 'body', 'mdbody', 'state'));
         return redirect(route('admin.post.manage'));
     }
 
     public function update(Request $request, Post $post)
     {
-        $post = $post->fill($request->only('title', 'body', 'state'))->save();
+        $post = $post->fill($request->only('title', 'body', 'mdbody', 'state'))->save();
         return redirect(route('admin.post.manage'));
     }
 }

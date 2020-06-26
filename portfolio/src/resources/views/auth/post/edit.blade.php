@@ -17,7 +17,7 @@
                 <textarea id="mde" name="body">{{ $post->body }}</textarea>
             </body> --}}
             <div id="app-editor">
-                <mavon-editor></mavon-editor>
+                <editor :mdbody='@json($post->mdbody)'></editor>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-4 offset-sm-4">

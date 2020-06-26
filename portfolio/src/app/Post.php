@@ -30,7 +30,7 @@ class Post extends Model
 
     public static function init()
     {
-        return parent::create(['title'=>'','body'=>'',])
+        return parent::create(['title' => '', 'body' => '', 'mdbody' => '', 'status' => 'draft']);
     }
 
     public function scopeInStatus($query, $arr)

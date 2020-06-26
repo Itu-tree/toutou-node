@@ -25,9 +25,10 @@ Vue.use(mavonEditor);
 export default {
   //   el: "#main",
   name: "editor",
+  props: ["mdbody"],
   data() {
     return {
-      value: "",
+      value: this.mdbody,
       mdbody: "",
       htmlbody: "",
       toolbars: {
@@ -52,6 +53,7 @@ export default {
         alignright: true,
         subfield: true,
         preview: true,
+        save: true,
         // false
         undo: false,
         redo: false,
@@ -59,7 +61,6 @@ export default {
         readmodel: false,
         htmlcode: false,
         trash: false,
-        save: false,
         navigation: false
       }
     };
