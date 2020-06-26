@@ -28,6 +28,11 @@ class Post extends Model
         });
     }
 
+    public static function init()
+    {
+        return parent::create(['title'=>'','body'=>'',])
+    }
+
     public function scopeInStatus($query, $arr)
     {
         $posts = $query->whereIn('state', $arr);

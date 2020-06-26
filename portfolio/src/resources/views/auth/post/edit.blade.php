@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.css">
-<script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script>
-
 @section('content')
 <form method="POST" action="{{route('admin.post.update',['post'=>$post])}}">
     {{ csrf_field() }}
@@ -16,19 +13,17 @@
                 <span class="help-block">{{$errors->first('title')}}</span>
             </div>
 
-            <body>
+            {{--  <body>
                 <textarea id="mde" name="body">{{ $post->body }}</textarea>
-            </body>
-
+            </body> --}}
+            <div id="app-editor">
+                <mavon-editor></mavon-editor>
+            </div>
             <div class="row mt-3">
                 <div class="col-sm-4 offset-sm-4">
                     <button type="submit" class="btn btn-primary w-100">保存</button>
                 </div>
             </div>
 </form>
-<script>
-    const mde = new SimpleMDE({
-                    element: document.getElementById("mde")
-                });
-</script>
+
 @endsection
