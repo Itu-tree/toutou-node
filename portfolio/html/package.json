@@ -28,6 +28,7 @@
     "dependencies": {
         "@babel/core": "^7.9.6",
         "core-js": "^3.6.5",
+        "github-markdown-css": "^4.0.0",
         "mavon-editor": "^2.9.0",
         "react": "^15.6.2",
         "react-dom": "^15.6.2",

@@ -5,14 +5,15 @@
         v-model="value"
         language="en"
         :toolbars="toolbars"
+        :ishljs="true"
         @change="changeText"
         ref="md"
         @imgAdd="$imgAdd"
         @imgDel="$imgDel"
       />
     </div>
-    <textarea v-model="mdbody" name="mdbody" class="form-control"></textarea>
-    <textarea v-model="htmlbody" name="body" class="form-control"></textarea>
+    <textarea v-model="mdbody" name="mdbody" class="form-control" style="display:none"></textarea>
+    <textarea v-model="htmlbody" name="body" class="form-control" style="display:none"></textarea>
   </div>
 </template>
 

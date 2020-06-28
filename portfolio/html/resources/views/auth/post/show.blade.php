@@ -6,7 +6,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">記事</div>
-                <div class="card-body">
+                <div class="card-body markdown-body">
                     <div class="card-text">
                         <p><a href="{{ route('admin.post.edit',['post'=>$post->id]) }}">
                                 <strong>編集</strong>

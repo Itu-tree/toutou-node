@@ -1932,6 +1932,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2003,9 +2004,6 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(mavon_editor__WEBPACK_IMPORTED_MO
         // step 2. replace url ![...](./0) -> ![...](url)
         // $vm.$img2Url. The details at the end of this page
         //$vm.$img2Url(pos, url);
-        console.log(response);
-        console.log(response.data);
-
         _this.$refs.md.$img2Url(pos, response.data);
       });
     }
@@ -38336,7 +38334,7 @@ var render = function() {
       [
         _c("mavon-editor", {
           ref: "md",
-          attrs: { language: "en", toolbars: _vm.toolbars },
+          attrs: { language: "en", toolbars: _vm.toolbars, ishljs: true },
           on: {
             change: _vm.changeText,
             imgAdd: _vm.$imgAdd,
@@ -38364,6 +38362,7 @@ var render = function() {
         }
       ],
       staticClass: "form-control",
+      staticStyle: { display: "none" },
       attrs: { name: "mdbody" },
       domProps: { value: _vm.mdbody },
       on: {
@@ -38386,6 +38385,7 @@ var render = function() {
         }
       ],
       staticClass: "form-control",
+      staticStyle: { display: "none" },
       attrs: { name: "body" },
       domProps: { value: _vm.htmlbody },
       on: {
