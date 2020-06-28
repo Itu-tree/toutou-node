@@ -13,7 +13,7 @@ services:
     #   - "1443:443"
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ./src:/var/www/html
+      - ./html:/var/www/html
       - ./docker/log/nginx:/var/log/nginx
     environment:
       - VIRTUAL_HOST=blog.localhost
@@ -27,7 +27,7 @@ services:
     container_name: "folio-php"
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ./src:/var/www/html
+      - ./html:/var/www/html
       - ./docker/log/php:/var/log/php
     environment:
       - DB_HOST=mysql
