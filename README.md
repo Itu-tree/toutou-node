@@ -56,6 +56,7 @@ https://qiita.com/watatakahashi/items/097120d3a77ee90695eb
 katexのスタイルを使う
 https://github.com/KaTeX/KaTeX
 
+https://github.com/hinesboy/mavonEditor/blob/master/doc/en/no-cnd.md
 
 
 #error 実行ユーザーがphp-fpmであるために，ファイルの書き込みができない．ので，php-fpmの設定(portfolio/docker/php/php-fpm.d/zzz-www.conf)を見直すか，

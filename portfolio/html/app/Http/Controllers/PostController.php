@@ -32,7 +32,7 @@ class PostController extends Controller
     public function create()
     {
         $post = Post::init();
-        return view('auth.post.create', ['post' => $post]);
+        return view('auth.post.edit', ['post' => $post]);
     }
 
     public function edit(Post $post)
@@ -40,11 +40,11 @@ class PostController extends Controller
         return view('auth.post.edit', ['post' => $post]);
     }
 
-    public function store(Request $request)
-    {
-        $post = Post::create($request->only('title', 'body', 'mdbody', 'state'));
-        return redirect(route('admin.post.manage'));
-    }
+    // public function store(Request $request, Post $post)
+    // {
+    //     $post = Post::create($request->only('title', 'body', 'mdbody', 'state'));
+    //     return redirect(route('admin.post.manage'));
+    // }
 
     public function update(Request $request, Post $post)
     {
