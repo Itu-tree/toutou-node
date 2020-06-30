@@ -16,7 +16,7 @@ services:
       - ./html:/var/www/html
       - ./docker/log/nginx:/var/log/nginx
     environment:
-      - VIRTUAL_HOST=blog.localhost
+      - VIRTUAL_HOST=blog.toutounode.localhost
       - PHP_APP_HOST=php
     depends_on:
       - php
