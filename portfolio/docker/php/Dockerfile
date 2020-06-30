@@ -35,4 +35,12 @@ RUN apt-get update && \
 COPY ./docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 
+ADD ./html /var/www/html
+
 WORKDIR /var/www/html
+
+RUN chown -R www-data:www-data storage
+RUN chown -R www-data:www-data bootstrap/cache
+
+
+
