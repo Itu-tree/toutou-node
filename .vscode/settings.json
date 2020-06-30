@@ -1,8 +1,8 @@
 {
     "laravel_goto_view.folders": {
-        "default": "/html/web/resources/views",
+        "default": "/portfolio/src/resources/views",
     },
-    "laravel_goto_controller.pathController": "/html/web/app/Http/Controllers",
+    "laravel_goto_controller.pathController": "/portfolio/src/app/Http/Controllers",
     "[blade]": {
         "editor.defaultFormatter": "onecentlin.laravel-blade"
     },
