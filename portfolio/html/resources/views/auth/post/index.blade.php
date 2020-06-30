@@ -11,7 +11,7 @@
                         @foreach ($posts as $post)
                         <div class="col-sm-6 col-md-3  mt-3">
                             <div class="card img-thumbnail h-100">
-                                <img class="card-img-top img-fluid" src="/static/img/topic.png" alt="画像">
+                                {{--  <img class="card-img-top img-fluid" src="/static/img/topic.png" alt="画像">  --}}
                                 <div class="card-body px-2 py-3">
                                     <h5 class="card-title"><a href="{{ route('admin.post.show',['post'=>$post->id]) }}"
                                             target="_blank" 　rel="noopener noreferrer">{{ $post->title }}</a>
