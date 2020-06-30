@@ -20,10 +20,6 @@
                         <td>{{$user->api_token}}</td>
                     </tr>
                     <tr>
-                        <td>tracking</td>
-                        <td> <a href="{{ route('player-transform') }}">tracking</a></td>
-                    </tr>
-                    <tr>
                         <td>記事管理</td>
                         <td> <a href="{{ route('admin.article.manage') }}">tracking</a></td>
                     </tr>
