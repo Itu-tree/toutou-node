@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\ArticleTag;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -37,7 +39,7 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        return view('auth.article.edit', ['article' => $article]);
+        return view('auth.article.edit', ['article' => $article, 'tags' => Tag::all()]);
     }
 
     // public function store(Request $request, article $article)
@@ -48,7 +50,15 @@ class ArticleController extends Controller
 
     public function update(Request $request, Article $article)
     {
-        $article = $article->fill($request->only('title', 'body', 'mdbody', 'state'))->save();
+        $article->fill($request->only('title', 'body', 'mdbody', 'state'))->save();
+        //tagの名前がuniqueか
+        //tagの新規作成
+        //$tag = Tag::create(['name'=>$tag_name])
+        //articletagの更新
+        //dd($request->tags);
+        // foreach ($request->tags as $tag) {
+        //     ArticleTag::create(['article_id' => $article->id, 'tag_id' => $tag->id]);
+        // }
         return redirect(route('admin.article.manage'));
     }
 }
