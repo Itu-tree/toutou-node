@@ -18,5 +18,5 @@
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('/', 'PostController@index')->name('top');
-Route::get('/post/{post}', 'PostController@show')->name('post.show');
+Route::get('/', 'ArticleController@index')->name('top');
+Route::get('/article/{article}', 'ArticleController@show')->name('article.show');

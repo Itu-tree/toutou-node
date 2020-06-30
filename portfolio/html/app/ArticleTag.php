@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostTag extends Model
+class ArticleTag extends Model
 {
     //
 }

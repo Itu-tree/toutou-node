@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
-class Post extends Model
+class Article extends Model
 {
     //
     use SoftDeletes;
@@ -14,7 +14,7 @@ class Post extends Model
     protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $table = 'posts';
+    protected $table = 'articles';
     protected $guarded = [];
 
     /**
@@ -35,17 +35,17 @@ class Post extends Model
 
     public function scopeInStatus($query, $arr)
     {
-        $posts = $query->whereIn('state', $arr);
-        return $posts;
+        $articles = $query->whereIn('state', $arr);
+        return $articles;
     }
 
-    public function PostTags()
+    public function ArticleTags()
     {
-        return $this->hadMany('App\PostTag');
+        return $this->hadMany('App\ArticleTag');
     }
 
     public function tags()
     {
-        return $this->hasManyThrough('App\Tag', 'App\PostTag', 'post_id', 'id', 'id', 'tag_id');
+        return $this->hasManyThrough('App\Tag', 'App\ArticleTag', 'article_id', 'id', 'id', 'tag_id');
     }
 }
