@@ -26,11 +26,11 @@ Vue.use(mavonEditor);
 export default {
   // el: "#app-editor",
   name: "editor",
-  props: ["mdbody", "post_id", "url"],
+  props: ["mdbody", "article_id", "url"],
   data() {
     return {
       value: this.mdbody,
-      post_id: this.post_id,
+      article_id: this.article_id,
       mdbody: "",
       htmlbody: "",
       toolbars: {
@@ -76,7 +76,7 @@ export default {
       // step 1. upload image to server.
       var formdata = new FormData();
       formdata.append("image", $file);
-      formdata.append("post_id", this.post_id);
+      formdata.append("article_id", this.article_id);
       axios({
         url: this.url,
         method: "post",

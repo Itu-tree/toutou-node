@@ -6,15 +6,15 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    {{ $post->title }}
-                    {{ $post->updated_at }}
-                    <a href="{{ route('admin.post.edit',['post'=>$post->id]) }}" target="_blank"
+                    {{ $article->title }}
+                    {{ $article->updated_at }}
+                    <a href="{{ route('admin.article.edit',['article'=>$article->id]) }}" target="_blank"
                         　rel="noopener noreferrer">編集</a>
                 </div>
                 <div class="card-body markdown-body">
                     <div class="card-text">
                     </div>
-                    {!! $post->body !!}
+                    {!! $article->body !!}
                 </div>
             </div>
         </div>

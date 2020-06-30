@@ -8,11 +8,11 @@
                 <div class="card-header">記事</div>
                 <div class="card-body markdown-body">
                     <div class="card-text">
-                        <p><a href="{{ route('admin.post.edit',['post'=>$post->id]) }}">
+                        <p><a href="{{ route('admin.article.edit',['article'=>$article->id]) }}">
                                 <strong>編集</strong>
                             </a></p>
-                        <p><strong>更新日 :{{ $post->updated_at }}</strong></p>
-                        {!! $post->body !!}
+                        <p><strong>更新日 :{{ $article->updated_at }}</strong></p>
+                        {!! $article->body !!}
                     </div>
                 </div>
             </div>

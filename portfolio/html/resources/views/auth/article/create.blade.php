@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form method="POST" action="{{route('admin.post.update',['post'=>$post])}}">
+<form method="POST" action="{{route('admin.article.update',['article'=>$article])}}">
     {{ csrf_field() }}
     <div class="row">
         <div class="col-12">
@@ -10,8 +10,8 @@
                 <span class="help-block">{{$errors->first('title')}}</span>
             </div>
             <div id="app-editor">
-                <editor :mdbody='@json($post->mdbody)' :post_id='@json($post->id)' :url='@json(route('
-                    admin.post.upload-image'))'>
+                <editor :mdbody='@json($article->mdbody)' :post_id='@json($article->id)' :url='@json(route('
+                    admin.article.upload-image'))'>
                 </editor>
             </div>
             <div class="row mt-3">

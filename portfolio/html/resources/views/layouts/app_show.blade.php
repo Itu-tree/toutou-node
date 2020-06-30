@@ -96,8 +96,8 @@
                                 </form>
 
                                 <a class="dropdown-item" href="{{ route('admin.home') }}">ホーム</a>
-                                <a class="dropdown-item" href="{{ route('admin.post.manage') }}">管理</a>
-                                <a class="dropdown-item" href="{{ route('admin.post.create') }}">作成</a>
+                                <a class="dropdown-item" href="{{ route('admin.article.manage') }}">管理</a>
+                                <a class="dropdown-item" href="{{ route('admin.article.create') }}">作成</a>
                         </li>
                         @endguest
                     </ul>

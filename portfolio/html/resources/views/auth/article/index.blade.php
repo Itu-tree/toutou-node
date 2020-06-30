@@ -8,16 +8,17 @@
                 <div class="card-header">記事</div>
                 <div class="card-body">
                     <div class="row">
-                        @foreach ($posts as $post)
+                        @foreach ($articles as $article)
                         <div class="col-sm-6 col-md-3  mt-3">
                             <div class="card img-thumbnail h-100">
                                 {{--  <img class="card-img-top img-fluid" src="/static/img/topic.png" alt="画像">  --}}
                                 <div class="card-body px-2 py-3">
-                                    <h5 class="card-title"><a href="{{ route('admin.post.show',['post'=>$post->id]) }}"
-                                            target="_blank" 　rel="noopener noreferrer">{{ $post->title }}</a>
+                                    <h5 class="card-title"><a
+                                            href="{{ route('admin.article.show',['article'=>$article->id]) }}"
+                                            target="_blank" 　rel="noopener noreferrer">{{ $article->title }}</a>
                                     </h5>
                                     <div class="card-text">
-                                        <p><strong>更新日 :{{ $post->updated_at }}</strong></p>
+                                        <p><strong>更新日 :{{ $article->updated_at }}</strong></p>
                                     </div>
                                 </div><!-- /.card-body -->
                             </div><!-- /.card -->

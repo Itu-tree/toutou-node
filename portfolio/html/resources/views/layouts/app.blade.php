@@ -18,8 +18,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @if(isset($post) && (route('post.show',['post'=>$post->id])===url()->current() ||
-    route('admin.post.show',['post'=>$post])===url()->current() ) )
+    @if(isset($article) && (route('article.show',['article'=>$article->id])===url()->current() ||
+    route('admin.article.show',['article'=>$article])===url()->current() ) )
     {{--  highlight css  --}}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
@@ -100,8 +100,8 @@
                                 </form>
 
                                 <a class="dropdown-item" href="{{ route('admin.home') }}">ホーム</a>
-                                <a class="dropdown-item" href="{{ route('admin.post.manage') }}">管理</a>
-                                <a class="dropdown-item" href="{{ route('admin.post.create') }}">作成</a>
+                                <a class="dropdown-item" href="{{ route('admin.article.manage') }}">管理</a>
+                                <a class="dropdown-item" href="{{ route('admin.article.create') }}">作成</a>
                         </li>
                         @endguest
                     </ul>
