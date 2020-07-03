@@ -18,7 +18,14 @@
                                             target="_blank" 　rel="noopener noreferrer">{{ $article->title }}</a>
                                     </h5>
                                     <div class="card-text">
-                                        <p><strong>更新日 :{{ $article->updated_at }}</strong></p>
+                                        <p>
+                                            @foreach ($article->tags as $tag)
+                                            <button type="button"
+                                                class="btn-sm btn-outline-dark">{{ $tag->name }}</button>
+                                            @endforeach
+                                        </p>
+                                        <p>state:{{ $article->state }}</p>
+                                        <p>updated_at:{{ $article->updated_at }}</p>
                                     </div>
                                 </div><!-- /.card-body -->
                             </div><!-- /.card -->
