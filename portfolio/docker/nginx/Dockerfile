@@ -12,3 +12,23 @@ COPY --from=node /usr/local/lib /usr/local/lib
 COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /var/www/html
+
+# アプリケーションの依存関係をインストールする
+# ワイルドカードを使用して、package.json と package-lock.json の両方が確実にコピーされるようにします。
+# 可能であれば (npm@5+)
+# COPY ./app/package*.json ./
+
+# node.js の環境変数を定義する
+# 本番環境では production
+ENV NODE_ENV=development
+
+# 雛形を生成するのに必要なパッケージのインストール
+RUN npm install -g express-generator \
+&& npm install --save three \
+&& npm -g install servez 
+# 本番用にコードを作成している場合
+# RUN npm install --only=production
+
+
+# アプリケーションのソースをバンドルする
+# COPY ./app .
