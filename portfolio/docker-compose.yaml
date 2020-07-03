@@ -1,57 +1,18 @@
 version: "3.3"
-volumes:
-  db-store:
-  php-fpm-socket:
 services:
   nginx:
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
-    container_name: "folio-nginx"
+    container_name: "portfolio-nginx"
     # ports:
     #   - "80:80"
     #   - "1443:443"
     volumes:
-      - php-fpm-socket:/var/run/php-fpm
       - ./html:/var/www/html
       - ./docker/log/nginx:/var/log/nginx
     environment:
-      - VIRTUAL_HOST=blog.localhost
-      - PHP_APP_HOST=php
-    depends_on:
-      - php
-  php:
-    build:
-      context: .
-      dockerfile: ./docker/php/Dockerfile
-    container_name: "folio-php"
-    volumes:
-      - php-fpm-socket:/var/run/php-fpm
-      - ./html:/var/www/html
-      - ./docker/log/php:/var/log/php
-    environment:
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_DATABASE=itu-folio
-      - DB_USERNAME=root
-      - DB_PASSWORD=root
-      - APP_DEBUG=true
-  mysql:
-    image: mysql:8
-    container_name: folio-mysql
-    restart: always
-    environment:
-      MYSQL_DATABASE: itu-folio
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: root
-      TZ: "Asia/Tokyo"
-    ports:
-      - "13316:3306"
-    volumes:
-      - db-store:/var/lib/mysql
-      - ./docker/mysql/conf.d:/etc/mysql/conf.d
-      - ./docker/log/mysql:/var/log/mysql
+      - VIRTUAL_HOST=toutounode.localhost
 
 networks:
   default:

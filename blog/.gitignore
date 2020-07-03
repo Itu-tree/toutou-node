@@ -36,7 +36,3 @@ Thumbs.db
 .vagrant/
 
 *.log
-
-# else
-/memo
-node_modules
