@@ -1,0 +1,28 @@
+h1 {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    display: block;
+    color: #ffff;
+}
+
+#info {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    display: block;
+    color: #ffff00;
+}
+
+#info a {
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
