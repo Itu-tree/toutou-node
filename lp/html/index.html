@@ -1,51 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8"/>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <script src="js/three.js"></script>
-  <script>
-    // ページの読み込みを待つ
-    window.addEventListener('load', init);
-
-    function init() {
-
-      // サイズを指定
-      const width = 960;
-      const height = 540;
-
-      // レンダラーを作成
-      const renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector('#myCanvas')
-      });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(width, height);
-
-      // シーンを作成
-      const scene = new THREE.Scene();
-
-      // カメラを作成
-      const camera = new THREE.PerspectiveCamera(45, width / height);
-      camera.position.set(0, 0, +1000);
-
-      // 箱を作成
-      const geometry = new THREE.BoxGeometry(400, 400, 400);
-      const material = new THREE.MeshNormalMaterial();
-      const box = new THREE.Mesh(geometry, material);
-      scene.add(box);
-
-      tick();
-
-      // 毎フレーム時に実行されるループイベントです
-      function tick() {
-        box.rotation.y += 0.01;
-        renderer.render(scene, camera); // レンダリング
-
-        requestAnimationFrame(tick);
-      }
-    }
-  </script>
-</head>
-<body>
-  <canvas id="myCanvas"></canvas>
-</body>
+  <script src="js/heroimage.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>toutou portfolio</title>
+  </head>
+  <body>
+    <h1 class="text-center">Hello , this is toutou portfolio</h1>
+    <h2 id="info"><a href="http://blog.toutounode.localhost">toutouのブログ</a></h2>
+    <canvas id="myCanvas"></canvas>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
 </html>
+
