@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import CreatableSelect from 'react-select/creatable';
 
 const tag_options = [];
-const draft_tag_options = [];
+const article_tag_options = [];
 
 
 const styles = {
@@ -16,13 +16,13 @@ class SelectTags extends Component {
     constructor(props) {
         super(props);
         var tags = this.props.tags;
-        var draft_tags = this.props.draft_tags;
+        var article_tags = this.props.article_tags;
         for (var i in tags) {
             tag_options.push({ value: tags[i]['name'], label: tags[i]['name'] });
         }
-        if (draft_tags !== null) {
-            for (var i in draft_tags) {
-                draft_tag_options.push({ value: draft_tags[i]['id'], label: draft_tags[i]['name'] });
+        if (article_tags !== null) {
+            for (var i in article_tags) {
+                article_tag_options.push({ value: article_tags[i]['name'], label: article_tags[i]['name'] });
             }
         }
     }
@@ -43,7 +43,7 @@ class SelectTags extends Component {
                         isMulti
                         isSearchable
                         // onChange={this.handleChange}
-                        defaultValue={draft_tag_options}
+                        defaultValue={article_tag_options}
                         name="tags[]"
                         options={tag_options}
                         styles={styles}
@@ -58,6 +58,6 @@ class SelectTags extends Component {
 
 if (document.getElementById('select_tags')) {
     let tags = JSON.parse(document.getElementById('select_tags').getAttribute('tags'));
-    let draft_tags = JSON.parse(document.getElementById('select_tags').getAttribute('draft_tags'));
-    ReactDOM.render(<SelectTags tags={tags} draft_tags={draft_tags} />, document.getElementById('select_tags'));
+    let article_tags = JSON.parse(document.getElementById('select_tags').getAttribute('article_tags'));
+    ReactDOM.render(<SelectTags tags={tags} article_tags={article_tags} />, document.getElementById('select_tags'));
 }

@@ -73761,7 +73761,7 @@ function _getPrototypeOf(o) {
 
 
 var tag_options = [];
-var draft_tag_options = [];
+var article_tag_options = [];
 var styles = {
   menu: function menu(styles) {
     return Object.assign(styles, {
@@ -73783,7 +73783,7 @@ var SelectTags = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
     var tags = _this.props.tags;
-    var draft_tags = _this.props.draft_tags;
+    var article_tags = _this.props.article_tags;
 
     for (var i in tags) {
       tag_options.push({
@@ -73792,11 +73792,11 @@ var SelectTags = /*#__PURE__*/function (_Component) {
       });
     }
 
-    if (draft_tags !== null) {
-      for (var i in draft_tags) {
-        draft_tag_options.push({
-          value: draft_tags[i]['id'],
-          label: draft_tags[i]['name']
+    if (article_tags !== null) {
+      for (var i in article_tags) {
+        article_tag_options.push({
+          value: article_tags[i]['name'],
+          label: article_tags[i]['name']
         });
       }
     }
@@ -73821,7 +73821,7 @@ var SelectTags = /*#__PURE__*/function (_Component) {
         isMulti: true,
         isSearchable: true // onChange={this.handleChange}
         ,
-        defaultValue: draft_tag_options,
+        defaultValue: article_tag_options,
         name: "tags[]",
         options: tag_options,
         styles: styles,
@@ -73836,10 +73836,10 @@ var SelectTags = /*#__PURE__*/function (_Component) {
 if (document.getElementById('select_tags')) {
   var _tags = JSON.parse(document.getElementById('select_tags').getAttribute('tags'));
 
-  var draft_tags = JSON.parse(document.getElementById('select_tags').getAttribute('draft_tags'));
+  var article_tags = JSON.parse(document.getElementById('select_tags').getAttribute('article_tags'));
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectTags, {
     tags: _tags,
-    draft_tags: draft_tags
+    article_tags: article_tags
   }), document.getElementById('select_tags'));
 }
 

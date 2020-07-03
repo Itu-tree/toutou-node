@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     @if(isset($article) && (route('article.show',['article'=>$article->id])===url()->current() ||
     route('admin.article.show',['article'=>$article])===url()->current() ) )
     {{--  highlight css  --}}
