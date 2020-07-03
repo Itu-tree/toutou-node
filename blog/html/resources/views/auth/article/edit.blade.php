@@ -22,7 +22,8 @@
                 <input type="hidden" class="form-control" name="state" value="{{ $article->state }}">
                 <span class="help-block">{{$errors->first('title')}}</span>
             </div>
-            <div id="select_tags" tags="{{json_encode($tags,JSON_UNESCAPED_UNICODE)}}"></div>
+            <div id="select_tags" tags="{{json_encode($tags,JSON_UNESCAPED_UNICODE)}}"
+                article_tags="{{json_encode($article->tags,JSON_UNESCAPED_UNICODE)}}"></div>
             <div class="form-group">
                 <label for="exampleSelect1exampleFormControlSelect1"></label>
                 <select class="form-control" id="exampleFormControlSelect1" name="state">

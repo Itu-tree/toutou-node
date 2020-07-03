@@ -5,16 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">
-                    {{ $article->title }}
-                    {{ $article->updated_at }}
-                    <a href="{{ route('admin.article.edit',['article'=>$article->id]) }}" target="_blank"
-                        　rel="noopener noreferrer">編集</a>
+                <div class="card-header">{{ $article->title }}
+                    updated_at:{{ $article->updated_at }}
                 </div>
-                <div class="card-body markdown-body">
-                    <div class="card-text">
+                <div class="card-body">
+                    <p>
+                        @foreach ($article->tags as $tag)
+                        <button type="button" class="btn-sm btn-outline-dark">{{ $tag->name }}</button>
+                        @endforeach
+                    </p>
+                    <div class="card-text markdown-body">
+                        {!! $article->body !!}
                     </div>
-                    {!! $article->body !!}
                 </div>
             </div>
         </div>
