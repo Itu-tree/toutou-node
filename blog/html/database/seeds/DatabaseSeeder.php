@@ -11,8 +11,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
-        $this->call(ArticlesTableSeeder::class);
-        $this->call(TagsTableSeeder::class);
+
+        if (App::environment('local')) {
+            // 環境はlocal
+            $this->call(UsersTableSeeder::class);
+            $this->call(ArticlesTableSeeder::class);
+            $this->call(TagsTableSeeder::class);
+        } else if (App::environment(['production'])) {
+            // 環境はproduction
+            $this->call(TagsTableSeeder::class);
+        }
     }
 }

@@ -27,7 +27,12 @@ markdown editor,bootstrap4 の記事,SEOの記事,uuid,settings.json,login後の
 
 以前，qiitaの記事44万件をDBに入れたことがあったが，mysqlのデータ領域は25GB位だった．個人ブログなので，さすがに万は超えないでしょ．
 
+
+論文、読み方。
+bottom up 的な考え方をする。証拠を積み重ねていく。
 ## 参考サイト
+githubからリポジトリをcloneして、コンテナをビルドをする前に、dockerでネットワークを作成する
+docker network create itu_shared
 
 https://qiita.com/at-946/items/dc8562346904cca2bb3b
 
