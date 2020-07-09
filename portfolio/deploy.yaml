@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: "portfolio-nginx"
+    # ports:
+    #   - "80:80"
+    #   - "1443:443"
+    volumes:
+      - ./html:/var/www/html
+      - ./docker/log/nginx:/var/log/nginx
+    environment:
+      - VIRTUAL_HOST=toutounode.com
+      - LETSENCRYPT_HOST=toutounode.com
+
+networks:
+  default:
+    external:
+      name: itu_shared

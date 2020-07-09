@@ -1,0 +1,58 @@
+version: "3.3"
+volumes:
+  db-store:
+  php-fpm-socket:
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: "blog-nginx"
+    # ports:
+    #   - "80:80"
+    #   - "1443:443"
+    volumes:
+      - php-fpm-socket:/var/run/php-fpm
+      - ./html:/var/www/html
+    environment:
+      - VIRTUAL_HOST=blog.toutounode.com
+      - LETSENCRYPT_HOST=blog.toutounode.com
+      - PHP_APP_HOST=php
+    depends_on:
+      - php
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    container_name: "blog-php"
+    volumes:
+      - php-fpm-socket:/var/run/php-fpm
+      - ./html:/var/www/html
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=itu-blog
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - APP_DEBUG=false
+      - APP_ENV=production
+  mysql:
+    image: mysql:8
+    container_name: blog-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: itu-blog
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      TZ: "Asia/Tokyo"
+    ports:
+      - "13316:3306"
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+
+networks:
+  default:
+    external:
+      name: itu_shared

@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /srv/docker/nginx-proxy-with-encrypt/certs:/etc/nginx/certs:ro
+      - ./certs:/etc/nginx/certs:ro
       - /etc/nginx/vhost.d
       - /usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
@@ -20,10 +20,11 @@ services:
     container_name: letsencrypt-nginx
     privileged: true
     volumes:
-      - /srv/docker/nginx-proxy-with-encrypt/certs:/etc/nginx/certs:rw
+      - ./certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
     volumes_from:
       - nginx-proxy
+    environment: DEFAULT_EMAIL=well.tree9746@gmail.com
     restart: always
 
 networks:
