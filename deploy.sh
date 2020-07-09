@@ -1,4 +1,6 @@
-docker-compose -f nginx-proxy/deploy.yaml up -d
+docker network create itu_shared
+
+docker-compose -f nginx-proxy/docker-compose.yaml up -d
 docker-compose -f portfolio/deploy.yaml up -d 
 docker-compose -f blog/deploy.yaml up -d
 
