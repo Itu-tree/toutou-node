@@ -14,7 +14,6 @@ services:
     environment:
       - VIRTUAL_HOST=toutounode.com
       - LETSENCRYPT_HOST=toutounode.com
-
 networks:
   default:
     external:
