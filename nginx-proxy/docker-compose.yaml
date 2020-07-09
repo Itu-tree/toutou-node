@@ -26,6 +26,7 @@ services:
       - nginx-proxy
     environment:
       - DEFAULT_EMAIL=well.tree9746@gmail.com
+      - NGINX_PROXY_CONTAINER=nginx-proxy
     restart: always
 
 networks:
