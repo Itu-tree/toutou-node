@@ -33,6 +33,7 @@ services:
       - DB_PASSWORD=root
       - APP_DEBUG=false
       - APP_ENV=production
+      - APP_URL=https://localhost
   mysql:
     image: mysql:8
     container_name: blog-mysql
