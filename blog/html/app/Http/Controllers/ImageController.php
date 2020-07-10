@@ -12,6 +12,6 @@ class ImageController extends Controller
     {
         //$path = Storage::disk('public')->put('images/' . $request->article_id, $request->file('image'), 'public');
         $path = $request->file('image')->store('images/' . $request->article_id);
-        return asset("storage/" . $path);
+        return secure_asset("storage/" . $path);
     }
 }
