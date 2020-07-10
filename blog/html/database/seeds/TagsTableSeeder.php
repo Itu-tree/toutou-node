@@ -13,7 +13,7 @@ class TagsTableSeeder extends Seeder
     public function run()
     {
         //
-        $n = 10;
+        $n = 3;
         for ($i = 0; $i < $n; $i++) {
             # code...
             $tag = new Tag();
