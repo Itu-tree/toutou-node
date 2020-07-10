@@ -10,12 +10,12 @@ services:
     container_name: "blog-nginx"
     ports:
       - "8080:80"
-      - "1443:443"
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ./html:/var/www/html
     environment:
       - VIRTUAL_HOST=blog.toutounode.com
+      - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=blog.toutounode.com
       - PHP_APP_HOST=php
     depends_on:
