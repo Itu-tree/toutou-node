@@ -10,7 +10,7 @@ ENV TZ=UTC \
   # composer environment
   COMPOSER_ALLOW_SUPERUSER=1 \
   COMPOSER_HOME=/composer 
-  # Laravel environment
+# Laravel environment
 #   DB_CONNECTION=mysql \
 #   DB_HOST=db \
 #   DB_DATABASE=laravel_local \
@@ -41,6 +41,7 @@ WORKDIR /var/www/html
 
 RUN chown -R www-data:www-data storage
 RUN chown -R www-data:www-data bootstrap/cache
+RUN chown www-data storage/ -R 
 
 
 
