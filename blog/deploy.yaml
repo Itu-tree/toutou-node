@@ -8,9 +8,9 @@ services:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
     container_name: "blog-nginx"
-    # ports:
-    #   - "80:80"
-    #   - "1443:443"
+    ports:
+      - "8080:80"
+      - "1443:443"
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ./html:/var/www/html
