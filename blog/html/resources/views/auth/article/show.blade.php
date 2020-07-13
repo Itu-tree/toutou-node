@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">{{ $article->title }}
+                <div class="card-header">
+                    <h1>{{ $article->title }}</h1>
                     <a href="{{ route('admin.article.edit',['article'=>$article->id]) }}">
                         <strong>編集</strong>
                     </a>
