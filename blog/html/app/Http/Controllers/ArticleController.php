@@ -25,9 +25,22 @@ class ArticleController extends Controller
         return view('auth.article.show', ['article' => $article]);
     }
 
+
     public function manage()
     {
         $articles = Article::latest('updated_at')->get();
+        return view('auth.article.index', ['articles' => $articles]);
+    }
+
+    public function managePublic()
+    {
+        $articles = Article::inStatus(['public'])->latest('updated_at')->get();
+        return view('auth.article.index', ['articles' => $articles]);
+    }
+
+    public function manageDraft(Article $article)
+    {
+        $articles = Article::inStatus(['draft'])->latest('updated_at')->get();
         return view('auth.article.index', ['articles' => $articles]);
     }
 
@@ -47,5 +60,13 @@ class ArticleController extends Controller
         $article->fill($request->only('title', 'body', 'mdbody', 'state'))->save();
         $update_tags($article->id, $article->tags()->pluck('name')->toArray(), $request->tags[0] == null ? [] : $request->tags);
         return redirect(route('admin.article.manage'));
+    }
+
+    public function delete(Article $article)
+    {
+        if ($article->state == "draft") {
+            $article->delete();
+        }
+        return redirect(route('admin.article.manage-draft'));
     }
 }

@@ -8,29 +8,31 @@
                 <div class="card-header">記事</div>
                 <div class="card-body">
                     <div class="row">
-                        @foreach ($articles as $article)
+                        @isset($articles)
+                        @foreach ($articles as $at)
                         <div class="col-sm-6 col-md-3  mt-3">
                             <div class="card img-thumbnail h-100">
                                 {{--  <img class="card-img-top img-fluid" src="/static/img/topic.png" alt="画像">  --}}
                                 <div class="card-body px-2 py-3">
                                     <h5 class="card-title"><a
-                                            href="{{ route('admin.article.show',['article'=>$article->id]) }}"
-                                            target="_blank" 　rel="noopener noreferrer">{{ $article->title }}</a>
+                                            href="{{ route('admin.article.show',['article'=>$at->id]) }}"
+                                            target="_blank" 　rel="noopener noreferrer">t:{{ $at->title }}</a>
                                     </h5>
                                     <div class="card-text">
                                         <p>
-                                            @foreach ($article->tags as $tag)
+                                            @foreach ($at->tags as $tag)
                                             <button type="button"
                                                 class="btn-sm btn-outline-dark">{{ $tag->name }}</button>
                                             @endforeach
                                         </p>
-                                        <p>state:{{ $article->state }}</p>
-                                        <p>updated_at:{{ $article->updated_at }}</p>
+                                        <p>state:{{ $at->state }}</p>
+                                        <p>updated_at:{{ $at->updated_at }}</p>
                                     </div>
                                 </div><!-- /.card-body -->
                             </div><!-- /.card -->
                         </div>
                         @endforeach
+                        @endisset
                     </div>
 
                 </div>

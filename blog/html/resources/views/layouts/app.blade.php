@@ -9,6 +9,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172522830-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-172522830-1');
+    </script>
 
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
@@ -102,6 +111,8 @@
 
                                 <a class="dropdown-item" href="{{ route('admin.home') }}">ホーム</a>
                                 <a class="dropdown-item" href="{{ route('admin.article.manage') }}">管理</a>
+                                <a class="dropdown-item" href="{{ route('admin.article.manage-public') }}">公開記事一覧</a>
+                                <a class="dropdown-item" href="{{ route('admin.article.manage-draft') }}">下書き記事一覧</a>
                                 <a class="dropdown-item" href="{{ route('admin.article.create') }}">作成</a>
                         </li>
                         @endguest
@@ -113,6 +124,47 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer class="container pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row justify-content-center">
+                <div class="col-6 col-md">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled text-small">
+                        @isset($articles)
+                        @foreach ($articles as $article)
+                        <li><a class="text-muted"
+                                href="{{ route('article.show',['article'=>$article->id]) }}">{{ $article->title }}</a>
+                        </li>
+                        @if ($loop->index > 3)
+                        @break
+                        @endif
+                        @endforeach
+                        @endisset
+                    </ul>
+                </div>
+                <div class="col-6 col-md ">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="https://blog.toutounode.com">ブログトップ</a></li>
+                        <li><a class="text-muted" href="https://toutounode.com">ポートフォリオトップ</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md ">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="{{ route('privacy') }}">お問い合わせ</a></li>
+                        <li><a class="text-muted" href="{{ route('privacy') }}">プライバシーポリシー</a></li>
+                        <li><a class="text-muted" href="#">twitter(not yet)</a></li>
+                        <li><a class="text-muted" href="https://github.com/Itu-tree">Github</a></li>
+                        <li><a class="text-muted"
+                                href="https://www.amazon.jp/hz/wishlist/ls/31CU7SF6JWJ22?ref_=wl_share">amazon欲しいものリスト</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <small class="d-block mb-3 text-muted">© toutou-blog</small>
+            </div>
+        </footer>
     </div>
 </body>
 
