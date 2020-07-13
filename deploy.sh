@@ -10,6 +10,6 @@ docker-compose -f portfolio/deploy.yaml exec -T nginx cp index.prod.html index.h
 docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm install --production"
 docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm run prod"
 docker-compose -f blog/deploy.yaml exec -T php cp .env.example .env
-docker-compose -f blog/deploy.yaml exec -T php bash -c "composer install"
+docker-compose -f blog/deploy.yaml exec -T php bash -c "composer install --no-dev"
 docker-compose -f blog/deploy.yaml exec -T php php artisan key:generate
 docker-compose -f blog/deploy.yaml exec -T php php artisan migrate:refresh --seed

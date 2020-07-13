@@ -16,6 +16,8 @@
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     //記事管理
     Route::get('/article', 'ArticleController@manage')->name('admin.article.manage');
+    Route::get('/article-public', 'ArticleController@managePublic')->name('admin.article.manage-public');
+    Route::get('/article-draft', 'ArticleController@manageDraft')->name('admin.article.manage-draft');
     Route::get('/article/create', 'ArticleController@create')->name('admin.article.create');
     Route::get('/article/edit/{article}', 'ArticleController@edit')->name('admin.article.edit')->where('article', '[0-9a-z-]+');
     Route::get('/article/show/{article}', 'ArticleController@showAdmin')->name('admin.article.show')->where('article', '[0-9a-z-]+');
