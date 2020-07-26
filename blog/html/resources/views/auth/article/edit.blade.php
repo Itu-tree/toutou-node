@@ -6,8 +6,8 @@
 <form method="POST" action="{{route('admin.article.update',['article'=>$article])}}">
     {{ csrf_field() }}
     <div class="row">
-        <div class="col-12">
-            <div class="form-group">
+        <div class="col-12  p-5">
+            <div class=" form-group">
                 <input type="text" name="title" class="form-control form-title" id="InputTitle" placeholder="タイトル"
                     value="{{ $article->title }}" required />
                 <span class="help-block">{{$errors->first('title')}}</span>
