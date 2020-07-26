@@ -63,8 +63,8 @@ export default {
         readmodel: false,
         htmlcode: false,
         trash: false,
-        navigation: false
-      }
+        navigation: false,
+      },
     };
   },
   methods: {
@@ -81,14 +81,14 @@ export default {
         url: this.url,
         method: "post",
         data: formdata,
-        headers: { "Content-Type": "multipart/form-data" }
-      }).then(response => {
+        headers: { "Content-Type": "multipart/form-data" },
+      }).then((response) => {
         // step 2. replace url ![...](./0) -> ![...](url)
         // $vm.$img2Url. The details at the end of this page
         //$vm.$img2Url(pos, url);
         this.$refs.md.$img2Url(pos, response.data);
       });
-    }
-  }
+    },
+  },
 };
 </script>
