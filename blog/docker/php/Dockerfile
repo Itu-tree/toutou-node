@@ -29,8 +29,9 @@ RUN apt-get update && \
   mkdir /var/log/php && \
   docker-php-ext-install intl pdo_mysql mbstring zip bcmath && \
   composer config -g process-timeout 3600 && \
-  composer config -g repos.packagist composer https://packagist.jp && \
-  composer global require hirak/prestissimo
+  composer config -g repos.packagist composer https://packagist.jp 
+  # && \
+  # composer global require hirak/prestissimo
 
 COPY ./docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
