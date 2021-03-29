@@ -38,5 +38,5 @@
                 </div>
             </div>
 </form>
-<script src="{{ secure_asset('js/react-app.js') }}" defer></script>
+<script src="{{ asset('js/react-app.js') }}" defer></script>
 @endsection
