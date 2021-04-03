@@ -1,4 +1,4 @@
-docker network create --driver bridge itu_shared
+docker network create --driver bridge toutou_shared
 
 docker-compose -f nginx-proxy/docker-compose.yaml up -d
 docker-compose -f portfolio/deploy.yaml up -d 

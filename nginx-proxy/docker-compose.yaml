@@ -32,4 +32,4 @@ services:
 networks:
   default:
     external:
-      name: itu_shared
+      name: toutou_shared
