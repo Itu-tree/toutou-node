@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             $this->call(TagsTableSeeder::class);
         } else if (App::environment(['production'])) {
             // 環境はproduction
-            $this->call(TagsTableSeeder::class);
+            //$this->call(TagsTableSeeder::class);
         }
     }
 }
