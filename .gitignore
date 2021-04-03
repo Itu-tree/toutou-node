@@ -37,7 +37,10 @@ Thumbs.db
 
 *.log
 
+
 # else
 /memo
 node_modules
 memo.md
+/memo-image
+
