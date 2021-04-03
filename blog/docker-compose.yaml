@@ -32,7 +32,7 @@ services:
     environment:
       - DB_HOST=mysql
       - DB_PORT=3306
-      - DB_DATABASE=itu-blog
+      - DB_DATABASE=toutou_blog
       - DB_USERNAME=root
       - DB_PASSWORD=root
       - APP_DEBUG=true
@@ -41,7 +41,7 @@ services:
     container_name: blog-mysql
     restart: always
     environment:
-      MYSQL_DATABASE: itu-blog
+      MYSQL_DATABASE: toutou_blog
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: root
@@ -56,4 +56,4 @@ services:
 networks:
   default:
     external:
-      name: itu_shared
+      name: toutou_shared
