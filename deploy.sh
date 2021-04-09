@@ -12,4 +12,5 @@ docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm run prod"
 docker-compose -f blog/deploy.yaml exec -T php cp .env.example .env
 docker-compose -f blog/deploy.yaml exec -T php bash -c "composer install --no-dev"
 docker-compose -f blog/deploy.yaml exec -T php php artisan key:generate
+docker-compose -f blog/deploy.yaml exec -T php php artisan storage:link
 docker-compose -f blog/deploy.yaml exec -T php php artisan migrate:refresh --seed
