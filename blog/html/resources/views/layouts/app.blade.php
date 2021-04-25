@@ -153,11 +153,8 @@
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="{{ route('privacy') }}">お問い合わせ</a></li>
                         <li><a class="text-muted" href="{{ route('privacy') }}">プライバシーポリシー</a></li>
-                        <li><a class="text-muted" href="#">twitter(not yet)</a></li>
+                        <li><a class="text-muted" href="https://twitter.com/__tou__tou">twitter</a></li>
                         <li><a class="text-muted" href="https://github.com/Itu-tree">Github</a></li>
-                        <li><a class="text-muted"
-                                href="https://www.amazon.jp/hz/wishlist/ls/31CU7SF6JWJ22?ref_=wl_share">amazon欲しいものリスト</a>
-                        </li>
                     </ul>
                 </div>
             </div>
