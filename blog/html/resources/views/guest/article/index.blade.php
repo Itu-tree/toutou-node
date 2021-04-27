@@ -19,11 +19,13 @@
                                     <div class="card-text">
                                         <p>
                                             @foreach ($at->tags as $tag)
-                                            <button type="button"
-                                                class="btn-sm btn-outline-dark">{{ $tag->name }}</button>
+                                            <button type="button" class="btn-sm btn-outline-dark"><i
+                                                    class="fas fa-tag"></i> {{ $tag->name }}</button>
                                             @endforeach
                                         </p>
-                                        <p>updated_at:{{ $at->updated_at }}</p>
+                                        <p>
+                                            <i class="far fa-clock"></i> {{ date("Y/m/d",strtotime($at->updated_at)) }}
+                                        </p>
                                     </div>
                                 </div><!-- /.card-body -->
                             </div><!-- /.card -->

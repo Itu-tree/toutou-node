@@ -7,12 +7,17 @@
             <div class="card">
                 <div class="card-header">
                     <h1>{{ $article->title }}</h1>
-                    updated_at:{{ $article->updated_at }}
+
                 </div>
                 <div class="card-body">
                     <p>
+                        更新:{{ date("Y/m/d",strtotime($article->updated_at))  }}
+                        作成：{{ date("Y/m/d",strtotime($article->created_at)) }}
+                    </p>
+                    <p>
                         @foreach ($article->tags as $tag)
-                        <button type="button" class="btn-sm btn-outline-dark">{{ $tag->name }}</button>
+                        <button type="button" class="btn-sm btn-outline-dark"><i class="fas fa-tag"></i>
+                            {{ $tag->name }}</button>
                         @endforeach
                     </p>
                     <div class="card-text markdown-body">
