@@ -20,15 +20,17 @@
                                     </h5>
                                     <div class="card-text">
                                         <p>
+                                            state:{{ $at->state }}
+                                        </p>
+                                        <p>
+                                            <i class="far fa-clock"></i> {{ date("Y/m/d",strtotime($at->updated_at)) }}
+                                        </p>
+                                        <p>
                                             @foreach ($at->tags as $tag)
                                             <button type="button" class="btn-sm btn-outline-dark">
                                                 <i class="fas fa-tag"></i> {{ $tag->name }}
                                             </button>
                                             @endforeach
-                                        </p>
-                                        <p>state:{{ $at->state }}</p>
-                                        <p>
-                                            <i class="far fa-clock"></i> {{ date("Y/m/d",strtotime($at->updated_at)) }}
                                         </p>
                                     </div>
                                 </div><!-- /.card-body -->
