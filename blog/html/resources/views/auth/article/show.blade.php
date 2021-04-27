@@ -10,10 +10,15 @@
                     <a href="{{ route('admin.article.edit',['article'=>$article->id]) }}">
                         <strong>編集</strong>
                     </a>
-                    state:{{ $article->state }}
-                    updated_at:{{ $article->updated_at }}
                 </div>
                 <div class="card-body">
+                    <p>
+                        state:{{ $article->state }}
+                    </p>
+                    <p>
+                        更新:{{ date("Y/m/d",strtotime($article->updated_at))  }}
+                        作成：{{ date("Y/m/d",strtotime($article->created_at)) }}
+                    </p>
                     <p>
                         @foreach ($article->tags as $tag)
                         <button type="button" class="btn-sm btn-outline-dark">{{ $tag->name }}</button>
