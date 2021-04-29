@@ -133,7 +133,7 @@
         <footer class="container pt-4 my-md-5 pt-md-5 border-top">
             <div class="row justify-content-center">
                 <div class="col-6 col-md">
-                    <h5>Features</h5>
+                    <h5>新着記事</h5>
                     <ul class="list-unstyled text-small">
                         @isset($articles)
                         @foreach ($articles as $article)
@@ -148,19 +148,22 @@
                     </ul>
                 </div>
                 <div class="col-6 col-md ">
-                    <h5>Resources</h5>
+                    <h5>リンク</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="https://blog.toutounode.com">ブログトップ</a></li>
                         <li><a class="text-muted" href="https://toutounode.com">ポートフォリオトップ</a></li>
+                        <li><a class="text-muted" href="https://blog.toutounode.com">ブログトップ</a></li>
+                        <li><a class="text-muted" href="https://github.com/Itu-tree">Github</a></li>
+                        <li><a class="text-muted" href="https://twitter.com/__tou__tou">twitter</a></li>
+                        <li><a class="text-muted"
+                                href="https://www.amazon.co.jp/hz/wishlist/dl/invite/3KiTDNy?ref_=wl_share">ほしいものリスト</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-md ">
-                    <h5>About</h5>
+                    <h5>サイト情報</h5>
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="{{ route('privacy') }}">お問い合わせ</a></li>
                         <li><a class="text-muted" href="{{ route('privacy') }}">プライバシーポリシー</a></li>
-                        <li><a class="text-muted" href="https://twitter.com/__tou__tou">twitter</a></li>
-                        <li><a class="text-muted" href="https://github.com/Itu-tree">Github</a></li>
                     </ul>
                 </div>
             </div>
