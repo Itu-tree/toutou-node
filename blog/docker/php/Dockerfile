@@ -17,7 +17,7 @@ ENV TZ=UTC \
 #   DB_USERNAME=phper \
 #   DB_PASSWORD=secret
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 
 RUN apt-get update && \
   apt-get -y install git libicu-dev libonig-dev libzip-dev unzip locales && \
@@ -29,7 +29,7 @@ RUN apt-get update && \
   mkdir /var/log/php && \
   docker-php-ext-install intl pdo_mysql mbstring zip bcmath && \
   composer config -g process-timeout 3600 && \
-  composer config -g repos.packagist composer https://packagist.jp 
+  composer config -g repos.packagist composer https://packagist.org 
 
 
 COPY ./docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
