@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCases\Tag;
+namespace App\Usecases\Tag;
 
 use App\ArticleTag;
 use App\Tag;
