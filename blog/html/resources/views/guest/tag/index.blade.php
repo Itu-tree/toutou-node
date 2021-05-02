@@ -13,7 +13,7 @@
                             @foreach ($tags as $tag)
                             <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light"
                                 target=" _blank" rel="noopener noreferrer">
-                                {{ $tag->name }}
+                                <i class="fas fa-tag"></i> {{ $tag->name }}
                                 <span class="badge badge-secondary">
                                     {{ $tag->articles()->count() }}
                                 </span>

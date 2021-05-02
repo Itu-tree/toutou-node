@@ -22,9 +22,10 @@
                                         </p>
                                         <p>
                                             @foreach ($at->tags as $tag)
-                                            <button type="button" class="btn-sm btn-outline-dark">
+                                            <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}"
+                                                class="badge badge-light" target=" _blank" rel="noopener noreferrer">
                                                 <i class="fas fa-tag"></i> {{ $tag->name }}
-                                            </button>
+                                            </a>
                                             @endforeach
                                         </p>
                                     </div>
