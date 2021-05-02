@@ -18,7 +18,15 @@
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('/', 'ArticleController@index')->name('top');
+
 Route::get('/sitemap.xml', 'FrontController@sitemap')->name('sitemap');
 Route::get('/privacy', 'FrontController@showPrivacy')->name('privacy');
+
+Route::get('/', 'ArticleController@index')->name('top');
 Route::get('/article/{article}', 'ArticleController@show')->name('article.show');
+
+
+Route::group(['prefix' => 'tag'], function () {
+    Route::get('/', 'TagController@showTags')->name('tag.index');
+    Route::get('/{tag}', 'TagController@showArticles')->name('tag.articles');
+});
