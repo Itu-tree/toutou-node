@@ -21,7 +21,10 @@
                     </p>
                     <p>
                         @foreach ($article->tags as $tag)
-                        <button type="button" class="btn-sm btn-outline-dark">{{ $tag->name }}</button>
+                        <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light"
+                            target=" _blank" rel="noopener noreferrer">
+                            <i class="fas fa-tag"></i> {{ $tag->name }}
+                        </a>
                         @endforeach
                     </p>
                     <div class="card-text markdown-body">
