@@ -12,3 +12,34 @@
 :not(pre):not(code) {
     font-family: "Noto Sans JP";
 }
+.auto-textarea-input {
+    font-family: "Noto Sans JP" !important;
+}
+
+//sidebar
+.sidebar-section {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Position the items */
+    // &:nth-child(2) { top: 25%; }
+    // &:nth-child(3) { top: 50%; }
+    // &:nth-child(4) { top: 75%; }
+}
+
+.make-me-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+    padding: 0 15px;
+}

@@ -63,7 +63,34 @@
         <div class="col-sm-2">
             <div class="sidebar-item mt-1">
                 <div class="make-me-sticky">
-                    <h3>Item 1</h3>
+                    {{-- <h3>記事検索</h3> --}}
+                    <h4>最近の投稿</h4>
+                    <ul class="list-unstyled text-small">
+                        @isset($articles)
+                        @foreach ($articles as $article)
+                        <li><a class="text-muted"
+                                href="{{ route('article.show',['article'=>$article->id]) }}">{{ $article->title }}</a>
+                        </li>
+                        @if ($loop->index >= 2)
+                        @break
+                        @endif
+                        @endforeach
+                        @endisset
+                    </ul>
+                    {{-- <h3>目次</h3> --}}
+                    <h4>タグ一覧</h4>
+                    <p>
+                        @foreach ($tags as $tag)
+                        <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light"
+                            target=" _blank" rel="noopener noreferrer">
+                            <i class="fas fa-tag"></i> {{ $tag->name }}
+                            <span class="badge badge-secondary">
+                                {{ $tag->count }}
+                            </span>
+                        </a>
+                        @endforeach
+                    </p>
+
                 </div>
             </div>
         </div>
