@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12">
-            <div class="card">
+            <div class="card bg-transparent">
                 <div class="card-header">プライバシーポリシー(個人情報保護方針)</div>
                 <div class="card-body">
                     <div class="row">
@@ -26,9 +26,7 @@
                         </p>
                         <h2>お問い合わせ</h2>
                         <p>
-                            当サイトに関するお問い合せは下記までご連絡ください。
-                        </p>
-                        <p>
+                            当サイトに関するお問い合せは下記までご連絡ください。<br />
                             toutounode[at]gmail.com
                         </p>
 
