@@ -8,7 +8,7 @@ h1 {
     color: #ffff;
 }
 
-#info {
+.foliolinks {
     position: absolute;
     top: 300px;
     width: 100%;
@@ -18,7 +18,7 @@ h1 {
     color: #ffff00;
 }
 
-#info a {
+.foliolinks a {
     color: #fff;
 }
 
