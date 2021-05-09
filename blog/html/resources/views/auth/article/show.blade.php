@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header　bg-transparent">
                     <h1>{{ $article->title }}</h1>
                     <a href="{{ route('admin.article.edit',['article'=>$article->id]) }}">
                         <strong>編集</strong>
