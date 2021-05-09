@@ -136,10 +136,10 @@
                     <h5>新着記事</h5>
                     <ul class="list-unstyled text-small">
                         @isset($articles)
-                        @foreach ($articles as $article)
+                        @foreach ($articles as $art)
                         <li class="border-bottom pt-1 pb-1"><a class="text-muted"
-                                href="{{ route('article.show',['article'=>$article->id]) }}">
-                                {{ $article->title }}
+                                href="{{ route('article.show',['article'=>$art->id]) }}">
+                                {{ $art->title }}
                             </a>
                         </li>
                         @if ($loop->index >= 4)
