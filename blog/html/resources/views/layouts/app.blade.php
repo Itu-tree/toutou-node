@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <small class="d-block mb-3 text-muted">© toutou-blog</small>
+                <small class="d-block mb-3 text-muted">©{{ config('app.name', 'Laravel') }}</small>
             </div>
         </footer>
     </div>
