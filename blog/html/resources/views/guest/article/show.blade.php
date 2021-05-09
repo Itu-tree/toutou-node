@@ -67,9 +67,9 @@
                     <h4>最近の投稿</h4>
                     <ul class="list-unstyled text-small">
                         @isset($articles)
-                        @foreach ($articles as $article)
+                        @foreach ($articles as $s_article)
                         <li class="border-bottom pt-1 pb-1"><a class="text-muted"
-                                href="{{ route('article.show',['article'=>$article->id]) }}">{{ $article->title }}</a>
+                                href="{{ route('article.show',['article'=>$s_article->id]) }}">{{ $s_article->title }}</a>
                         </li>
                         @if ($loop->index >= 2)
                         @break
