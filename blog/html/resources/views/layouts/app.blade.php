@@ -140,7 +140,7 @@
                         <li><a class="text-muted"
                                 href="{{ route('article.show',['article'=>$article->id]) }}">{{ $article->title }}</a>
                         </li>
-                        @if ($loop->index > 3)
+                        @if ($loop->index >= 2)
                         @break
                         @endif
                         @endforeach

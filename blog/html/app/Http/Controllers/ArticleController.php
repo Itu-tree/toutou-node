@@ -11,13 +11,15 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::inStatus(['public'])->latest('updated_at')->get();
+        $articles = Article::inStatus(['public'])->latest('updated_at')->limit(5)->get();
         return view('guest.article.index', ['articles' => $articles]);
     }
 
     public function show(Article $article)
     {
-        return view('guest.article.show', ['article' => $article]);
+        $articles = Article::inStatus(['public'])->latest('updated_at')->limit(5)->get();
+        $tags = Tag::inStatus(['public'])->get();
+        return view('guest.article.show', ['article' => $article, 'articles' => $articles, 'tags' => $tags]);
     }
 
     public function showAdmin(Article $article)

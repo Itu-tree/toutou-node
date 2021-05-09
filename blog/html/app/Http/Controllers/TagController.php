@@ -12,7 +12,7 @@ class TagController extends Controller
     //
     public function showTags()
     {
-        $tags = Tag::all();
+        $tags = Tag::inStatus(['public'])->get();
         return view('guest.tag.index', ['tags' => $tags]);
     }
 
