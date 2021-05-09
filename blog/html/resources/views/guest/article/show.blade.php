@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="col-2">
-            <div class="sidebar-item mt-1">
+            <div class="sidebar-item">
                 <div class="make-me-sticky">
                     {{-- <h3>記事検索</h3> --}}
                     <h4>最近の投稿</h4>
