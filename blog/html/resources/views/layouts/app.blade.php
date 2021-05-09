@@ -137,10 +137,12 @@
                     <ul class="list-unstyled text-small">
                         @isset($articles)
                         @foreach ($articles as $article)
-                        <li><a class="text-muted"
-                                href="{{ route('article.show',['article'=>$article->id]) }}">{{ $article->title }}</a>
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
+                                href="{{ route('article.show',['article'=>$article->id]) }}">
+                                {{ $article->title }}
+                            </a>
                         </li>
-                        @if ($loop->index >= 2)
+                        @if ($loop->index >= 4)
                         @break
                         @endif
                         @endforeach
@@ -150,11 +152,15 @@
                 <div class="col-6 col-md ">
                     <h5>リンク</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="https://toutounode.com">ポートフォリオトップ</a></li>
-                        <li><a class="text-muted" href="https://blog.toutounode.com">ブログトップ</a></li>
-                        <li><a class="text-muted" href="https://github.com/Itu-tree">Github</a></li>
-                        <li><a class="text-muted" href="https://twitter.com/__tou__tou">twitter</a></li>
-                        <li><a class="text-muted"
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
+                                href="https://toutounode.com">ポートフォリオトップ</a></li>
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
+                                href="https://blog.toutounode.com">ブログトップ</a></li>
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
+                                href="https://github.com/Itu-tree">Github</a></li>
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
+                                href="https://twitter.com/__tou__tou">twitter</a></li>
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
                                 href="https://www.amazon.co.jp/hz/wishlist/dl/invite/3KiTDNy?ref_=wl_share">ほしいものリスト</a>
                         </li>
                     </ul>
@@ -162,8 +168,10 @@
                 <div class="col-6 col-md ">
                     <h5>サイト情報</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="{{ route('privacy') }}">お問い合わせ</a></li>
-                        <li><a class="text-muted" href="{{ route('privacy') }}">プライバシーポリシー</a></li>
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
+                                href="{{ route('privacy') }}">お問い合わせ</a></li>
+                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
+                                href="{{ route('privacy') }}">プライバシーポリシー</a></li>
                     </ul>
                 </div>
             </div>
