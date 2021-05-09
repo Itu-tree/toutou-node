@@ -38,7 +38,7 @@
         </div>
         <div class="col-9">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-transparent">
                     <h1>{{ $article->title }}</h1>
                 </div>
                 <div class="card-body">

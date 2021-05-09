@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">タグ一覧</div>
+                <div class="card-header bg-transparent">タグ一覧</div>
                 <div class="card-body">
                     <div class="row">
                         <p>
