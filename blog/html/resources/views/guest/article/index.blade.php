@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">記事</div>
+                <div class="card-header bg-transparent">記事</div>
                 <div class="card-body">
                     <div class="row">
                         @foreach ($articles as $at)

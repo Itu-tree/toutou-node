@@ -14,7 +14,7 @@
                             <div class="card img-thumbnail h-100">
                                 {{--  <img class="card-img-top img-fluid" src="/static/img/topic.png" alt="画像">  --}}
                                 <div class="card-body px-2 py-3">
-                                    <h5 class="card-title"><a
+                                    <h5 class="card-title　bg-transparent"><a
                                             href="{{ route('admin.article.show',['article'=>$at->id]) }}"
                                             target="_blank" 　rel="noopener noreferrer">t:{{ $at->title }}</a>
                                     </h5>
