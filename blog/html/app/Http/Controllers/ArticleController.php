@@ -11,7 +11,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::inStatus(['public'])->latest('updated_at')->limit(5)->get();
+        $articles = Article::inStatus(['public'])->latest('updated_at')->get();
         return view('guest.article.index', ['articles' => $articles]);
     }
 
