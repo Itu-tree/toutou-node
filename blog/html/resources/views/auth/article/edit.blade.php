@@ -14,8 +14,8 @@
             </div>
 
             <div id="app-editor">
-                <editor :mdbody='@json($article->mdbody)' :article_id='@json($article->id)'
-                    :url="{{ json_encode(route('admin.article.upload-image')) }}">
+                <editor v-bind:mdbody='@json($article->mdbody)' v-bind:article_id='@json($article->id)'
+                    v-bind:url="{{ json_encode(route('admin.article.upload-image')) }}">
                 </editor>
             </div>
             <div class="form-group">
