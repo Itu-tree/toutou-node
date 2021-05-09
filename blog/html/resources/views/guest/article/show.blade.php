@@ -3,11 +3,43 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-12">
+        <div class="col-sm-1">
+            <div class="sidebar-item">
+                <div class="make-me-sticky mt-5">
+                    <p>
+                        <a href={{ "http://twitter.com/share?text=&url=".url()->current() }} target="_blank"
+                            rel="nofollow noopener noreferrer">
+                            <span class="fab fa-twitter-square fa-2x"></span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href={{ "https://social-plugins.line.me/lineit/share?url=".url()->current() }}
+                            target="_blank" rel="nofollow noopener noreferrer">
+                            <span class="fab fa-line fa-2x" style="color:forestgreen;"></span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href={{"https://www.facebook.com/sharer/sharer.php?u=".url()->current()}} target="_blank"
+                            rel="nofollow noopener noreferrer">
+                            <span class="fab fa-facebook-square fa-2x"></span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
+                            data-hatena-bookmark-layout="touch" data-hatena-bookmark-width="25.2"
+                            data-hatena-bookmark-height="25.2" title="このエントリーをはてなブックマークに追加"><img
+                                src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+                                alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+                        <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js"
+                            charset="utf-8" async="async"></script>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
             <div class="card">
                 <div class="card-header">
                     <h1>{{ $article->title }}</h1>
-
                 </div>
                 <div class="card-body">
                     <p>
@@ -25,6 +57,13 @@
                     <div class="card-text markdown-body">
                         {!! $article->body !!}
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="sidebar-item mt-1">
+                <div class="make-me-sticky">
+                    <h3>Item 1</h3>
                 </div>
             </div>
         </div>
