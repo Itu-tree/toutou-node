@@ -9,13 +9,12 @@
                 <div class="card-body">
                     <div class="row">
                         <p>
-
                             @foreach ($tags as $tag)
                             <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light"
                                 target=" _blank" rel="noopener noreferrer">
                                 <i class="fas fa-tag"></i> {{ $tag->name }}
                                 <span class="badge badge-secondary">
-                                    {{ $tag->articles()->count() }}
+                                    {{ $tag->count }}
                                 </span>
                             </a>
                             @endforeach
