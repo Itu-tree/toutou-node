@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-1">
+        <div class="col-1">
             <div class="sidebar-item">
                 <div class="make-me-sticky mt-5">
                     <p>
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-9">
+        <div class="col-9">
             <div class="card">
                 <div class="card-header">
                     <h1>{{ $article->title }}</h1>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-2">
             <div class="sidebar-item mt-1">
                 <div class="make-me-sticky">
                     {{-- <h3>記事検索</h3> --}}
