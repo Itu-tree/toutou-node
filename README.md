@@ -5,7 +5,7 @@
 
 ![response](./ReadMeImage/about-local.png)
 
-# 開発環境とセットアップ
+# 開発環境のセットアップ
 ## 開発環境
 - [VSCode Remote Containers](https://code.visualstudio.com/docs/remote/containers)
     - windows(WSL2)
@@ -17,8 +17,8 @@ Ubuntuのコンソール
 $ git clone https://github.com/Itu-tree/toutou-node.git
 $ cd toutounode
 $ cp toutounode/blog/html/.env.example toutounode/blog/html/.env
-$ docker network create --driver bridge itu_shared
-$ sh up-dev.sh
+$ docker network create --driver bridge toutou_shared
+$ sh local-deploy.sh
 ```
 
 toutounode.localhost　にアクセス
@@ -29,7 +29,7 @@ toutounode.localhost　にアクセス
 ```
 $ git clone https://github.com/Itu-tree/toutou-node.git
 $ cd toutounode
-$ sh deploy.sh
+$ sh prod-deploy.sh
 ```
 
 ## 管理者アカウントの作成
