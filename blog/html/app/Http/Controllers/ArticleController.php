@@ -61,8 +61,7 @@ class ArticleController extends Controller
     {
         $converter = new HtmlConverter();
         $article->fill($request->only('title', 'body', 'state') + ['mdbody' => $converter->convert($request->body)])->save();
-        $article->mdbdoy =
-            $updateTag($article->id, $article->tags()->pluck('name')->toArray(), $request->tags[0] == null ? [] : $request->tags);
+        $updateTag($article->id, $article->tags()->pluck('name')->toArray(), $request->tags[0] == null ? [] : $request->tags);
         return redirect(route('admin.article.manage'));
     }
 
