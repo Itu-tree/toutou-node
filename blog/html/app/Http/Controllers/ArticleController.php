@@ -6,6 +6,7 @@ use App\Article;
 use App\Tag;
 use App\Usecases\Tag\UpdateArticleTags;
 use Illuminate\Http\Request;
+use League\HTMLToMarkdown\HtmlConverter;
 
 class ArticleController extends Controller
 {
@@ -58,8 +59,10 @@ class ArticleController extends Controller
 
     public function update(Request $request, Article $article, UpdateArticleTags $updateTag)
     {
-        $article->fill($request->only('title', 'body', 'mdbody', 'state'))->save();
-        $updateTag($article->id, $article->tags()->pluck('name')->toArray(), $request->tags[0] == null ? [] : $request->tags);
+        $converter = new HtmlConverter();
+        $article->fill($request->only('title', 'body', 'state') + ['mdbody' => $converter->convert($request->body)])->save();
+        $article->mdbdoy =
+            $updateTag($article->id, $article->tags()->pluck('name')->toArray(), $request->tags[0] == null ? [] : $request->tags);
         return redirect(route('admin.article.manage'));
     }
 
