@@ -8,8 +8,8 @@ window.addEventListener('load', init);
 
 function init() {
     // サイズを指定
-    const width = 960;
-    const height = 540;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
     let rot = 0;
     let mouseX = 0; // マウス座標
