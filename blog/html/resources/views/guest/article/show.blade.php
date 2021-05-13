@@ -1,11 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-1">
@@ -45,6 +39,13 @@
             <div class="card">
                 <div class="card-header bg-transparent">
                     <h1>{{ $article->title }}</h1>
+                    @auth
+                    <p class="text-right">
+                        <a href="{{ route('admin.article.edit',['article'=>$article->id]) }}">
+                            state:{{ $article->state }} | <strong>編集</strong>
+                        </a>
+                    </p>
+                    @endauth
                 </div>
                 <div class="card-body">
                     <p>
@@ -59,9 +60,10 @@
                         </a>
                         @endforeach
                     </p>
-                    <div class="card-text markdown-body">
+
+                    <body class="card-text " data-spy="scroll" data-target="#toc">
                         {!! $article->body !!}
-                    </div>
+                    </body>
                 </div>
             </div>
         </div>
@@ -69,20 +71,9 @@
             <div class="sidebar-item">
                 <div class="make-me-sticky">
                     {{-- <h3>記事検索</h3> --}}
-                    <h4>最近の投稿</h4>
-                    <ul class="list-unstyled text-small">
-                        @isset($articles)
-                        @foreach ($articles as $s_article)
-                        <li class="border-bottom pt-1 pb-1"><a class="text-muted"
-                                href="{{ route('article.show',['article'=>$s_article->id]) }}">{{ $s_article->title }}</a>
-                        </li>
-                        @if ($loop->index >= 2)
-                        @break
-                        @endif
-                        @endforeach
-                        @endisset
-                    </ul>
-                    {{-- <h3>目次</h3> --}}
+                    <nav id="toc" data-toggle="toc">
+                        <h4>目次</h4>
+                    </nav>
                     <h4>タグ一覧</h4>
                     <p>
                         @foreach ($tags as $tag)
@@ -95,24 +86,9 @@
                         </a>
                         @endforeach
                     </p>
-
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script>
-        MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-      MathJax.Hub.Config({
-        showMathMenu: false,
-        TeX: {
-          extensions: [ "[mhchem]/mhchem.js" ]
-        },
-        messageStyle: "none",
-          tex2jax: {
-          preview: "none"
-        }
-      });
-    </script>
+
     @endsection
