@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header bg-transparent">記事</div>
+                <div class="card-header bg-transparent ">
+                    <h1>articles @auth @if(isset($article_state)) {{ '('.$article_state.')' }} @endauth @endif</h1>
+                </div>
                 <div class="card-body">
                     <div class="row">
                         @foreach ($articles as $at)
@@ -29,8 +31,8 @@
                                             @endforeach
                                         </p>
                                     </div>
-                                </div><!-- /.card-body -->
-                            </div><!-- /.card -->
+                                </div>
+                            </div>
                         </div>
                         @endforeach
                     </div>
