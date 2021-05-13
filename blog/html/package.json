@@ -31,7 +31,6 @@
         "jquery": "^3.6.0",
         "laravel-mix": "^6.0.19",
         "lodash": "^4.17.21",
-        "mavon-editor": "^2.9.1",
         "popper.js": "^1.12",
         "postcss": "^8.2.14",
         "react": "^17.0.2",
