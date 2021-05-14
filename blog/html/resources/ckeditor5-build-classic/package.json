@@ -59,7 +59,7 @@
     "@ckeditor/ckeditor5-dev-webpack-plugin": "^24.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^27.1.0",
     "ckeditor5-math": "^27.1.2",
-    "postcss-loader": "^5.2.0",
+    "postcss-loader": "^3.0.0",
     "raw-loader": "^4.0.1",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^3.0.2",
