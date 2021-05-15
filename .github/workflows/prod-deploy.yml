@@ -29,4 +29,4 @@ jobs:
       run: |
         echo "$SECRET_KEY" > secret_key
         chmod 600 secret_key
-        ssh -oStrictHostKeyChecking=no ${USER}@${HOST} -i secret_key "cd ~/toutounode && git checkout . && git pull origin master && make prod-update"
+        ssh -oStrictHostKeyChecking=no ${USER}@${HOST} -i secret_key "cd ~/toutou-node && git checkout . && git pull origin master && make prod-update"
