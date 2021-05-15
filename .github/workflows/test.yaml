@@ -1,0 +1,39 @@
+name: stg-test
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  pull_request:
+    branches: [ master ]
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        
+      # Runs multiple commands using the runners shell
+      # - name: Docker set up
+      #   run: |
+      #     cp html/web/.env.example html/web/.env
+          
+      # Runs multiple commands using the runners shell
+      # - name: php unit test
+      #   run: |
+      #     docker-compose exec -T php bash -c "cd ./html && ./vendor/bin/phpunit"
+    
+      - name: merge pull request
+        uses: actions/github-script@0.4.0
+        with:
+          github-token: ${{secrets.TOUTOUNODE_TOKEN}}
+          script: |
+            github.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            })
