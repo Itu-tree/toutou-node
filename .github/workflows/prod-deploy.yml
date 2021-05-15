@@ -26,8 +26,7 @@ jobs:
         SECRET_KEY: ${{ secrets.SSH_KEY }}
         USER: ${{ secrets.SSH_USER }}
         HOST: ${{ secrets.SSH_HOST }}
-      run: 
-        # 秘密鍵にファイル名secret_keyをつける
+      run: |
         echo "$SECRET_KEY" > secret_key
         chmod 600 secret_key
         ssh -oStrictHostKeyChecking=no ${USER}@${HOST} -i secret_key "cd ~/toutounode && git checkout . && git pull origin master && make prod-update"
