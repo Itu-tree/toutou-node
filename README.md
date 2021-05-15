@@ -16,9 +16,7 @@ Ubuntuのコンソール
 ```
 $ git clone https://github.com/Itu-tree/toutou-node.git
 $ cd toutounode
-$ cp toutounode/blog/html/.env.example toutounode/blog/html/.env
-$ docker network create --driver bridge toutou_shared
-$ sh local-deploy.sh
+$ make local-deploy
 ```
 
 toutounode.localhost　にアクセス
@@ -29,7 +27,7 @@ toutounode.localhost　にアクセス
 ```
 $ git clone https://github.com/Itu-tree/toutou-node.git
 $ cd toutounode
-$ sh prod-deploy.sh
+$ make prod-deploy
 ```
 
 ## 管理者アカウントの作成
