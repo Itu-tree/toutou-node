@@ -20,13 +20,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: ssh deploy
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
-        with: # shimataro/ssh-key-actionに渡すパラメーター
-          key: ${{ secrets.SSH_KEY }} # 必須
-          name: id_rsa # 省略可
-          known_hosts: ${{ secrets.KNOWN_HOSTS }} # 必須
-      - name: run deploy script
-        run: ssh ${{ secrets.SSH_USER }}@toutounode.com "cd ~/toutounode && git checkout . && git pull origin master && make prod-update"
+      env:
+        SECRET_KEY: ${{ secrets.SSH_KEY }}
+        USER: ${{ secrets.SSH_USER }}
+        HOST: ${{ secrets.SSH_HOST }}
+        run: 
+          # 秘密鍵にファイル名secret_keyをつける
+          echo "$SECRET_KEY" > secret_key
+          chmod 600 secret_key
+          ssh -oStrictHostKeyChecking=no ${USER}@${HOST} -i secret_key "cd ~/toutounode && git checkout . && git pull origin master && make prod-update"
