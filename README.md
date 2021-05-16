@@ -1,4 +1,8 @@
+
 # toutou-node
+[![test](https://github.com/Itu-tree/toutou-node/actions/workflows/test.yaml/badge.svg)](https://github.com/Itu-tree/toutou-node/actions/workflows/test.yaml)
+[![deploy](https://github.com/Itu-tree/toutou-node/actions/workflows/deploy.yml/badge.svg)](https://github.com/Itu-tree/toutou-node/actions/workflows/deploy.yml)
+
 成果物を紹介したり、記事を書いたりする場所
 
 # 全体構成
