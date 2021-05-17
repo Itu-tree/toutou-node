@@ -25,6 +25,9 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import ImageResizeEditing from '@ckeditor/ckeditor5-image/src/imageresize/imageresizeediting';
+import ImageResizeHandles from '@ckeditor/ckeditor5-image/src/imageresize/imageresizehandles';
+import ImageResizeButtons from '@ckeditor/ckeditor5-image/src/imageresize/imageresizebuttons';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
@@ -56,13 +59,8 @@ ClassicEditor.builtinPlugins = [
 	Underline, Strikethrough, Code, Subscript, Superscript,
 	BlockQuote,
 	CloudServices,
-	EasyImage,
+	EasyImage, Image, ImageCaption, ImageStyle, ImageToolbar, ImageUpload, ImageResizeEditing, ImageResizeHandles, ImageResizeButtons,
 	Heading,
-	Image,
-	ImageCaption,
-	ImageStyle,
-	ImageToolbar,
-	ImageUpload,
 	Indent,
 	Link,
 	List,
@@ -91,7 +89,41 @@ ClassicEditor.defaultConfig = {
 		previewClassName: [], // Class names to add to previews
 		popupClassName: [] // Class names to add to math popup balloon
 	},
+	image: {
+		// Configure the available styles.
+		styles: [
+			'alignLeft', 'alignCenter', 'alignRight'
+		],
 
+		// Configure the available image resize options.
+		resizeOptions: [
+			{
+				name: 'resizeImage:original',
+				label: 'Original',
+				value: null
+			},
+			{
+				name: 'resizeImage:50',
+				label: '50%',
+				value: '50'
+			},
+			{
+				name: 'resizeImage:75',
+				label: '75%',
+				value: '75'
+			}
+		],
+
+		// You need to configure the image toolbar, too, so it shows the new style
+		// buttons as well as the resize buttons.
+		toolbar: [
+			'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight',
+			'|',
+			'resizeImage',
+			'|',
+			'imageTextAlternative'
+		]
+	},
 	toolbar: {
 		items: [
 			'heading',
@@ -117,17 +149,7 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
-		]
-	},
-
-
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
+			'redo',
 		]
 	},
 	table: {
