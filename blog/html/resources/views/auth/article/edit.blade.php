@@ -39,11 +39,6 @@
     </div>
     <div class="row justify-content-md-center">
         <div class="form-group col-md-10">
-            <input type="hidden" class="form-control" name="state" value="{{ $article->state }}">
-        </div>
-    </div>
-    <div class="row justify-content-md-center">
-        <div class="form-group col-md-10">
             <input type="hidden" class="form-control" name="article_id" value="{{ $article->id }}">
         </div>
     </div>
