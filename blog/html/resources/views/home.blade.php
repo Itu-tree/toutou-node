@@ -21,7 +21,7 @@
                     </tr>
                     <tr>
                         <td>記事管理</td>
-                        <td> <a href="{{ route('admin.article.manage') }}">tracking</a></td>
+                        <td> <a href="{{ route('admin.article.manage') }}">記事一覧</a></td>
                     </tr>
 
                 </tbody>
