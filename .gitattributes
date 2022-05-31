@@ -1,1 +1,3 @@
-blog/html/public/js/* linguist-vendored
+blog/html/public/js/* linguist-generated
+blog/html/node_modules/* linguist-vendored
+blog/html/resources/ckeditor5-build-classic/* linguist-vendored
