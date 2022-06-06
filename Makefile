@@ -4,6 +4,7 @@ local-deploy:
 	docker network create --driver bridge toutou_shared
 	docker-compose -f nginx-proxy/docker-compose.yaml up -d
 	docker-compose -f portfolio/docker-compose.yaml up -d 
+	docker-compose -f portfolio/docker-compose.yaml exec -T nginx cp index.local.html index.html
 	docker-compose -f blog/docker-compose.yaml up -d
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic && npm install && npm run build && cd ../../"
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm install"
@@ -16,6 +17,7 @@ local-deploy:
 local-update:
 	docker-compose -f nginx-proxy/docker-compose.yaml up -d
 	docker-compose -f portfolio/docker-compose.yaml up -d 
+	docker-compose -f portfolio/docker-compose.yaml exec -T nginx cp index.local.html index.html
 	docker-compose -f blog/docker-compose.yaml up -d
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic && npm install && npm run build && cd ../../"
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "rm -rf node_modules"
