@@ -26,14 +26,3 @@ jobs:
       # - name: php unit test
       #   run: |
       #     docker-compose exec -T php bash -c "cd ./html && ./vendor/bin/phpunit"
-    
-      - name: merge pull request
-        uses: actions/github-script@0.4.0
-        with:
-          github-token: ${{secrets.TOUTOUNODE_TOKEN}}
-          script: |
-            github.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number
-            })
