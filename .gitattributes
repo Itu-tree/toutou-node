@@ -1,3 +1,4 @@
-blog/html/public/js/* linguist-generated
+# See https://github.com/github/linguist/blob/master/docs/overrides.md#generated-code
+blog/html/public/js/*.js linguist-generated
 blog/html/node_modules/* linguist-vendored
 blog/html/resources/ckeditor5-build-classic/* linguist-vendored
