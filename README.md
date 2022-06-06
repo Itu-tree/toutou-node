@@ -22,6 +22,13 @@ $ git clone https://github.com/Itu-tree/toutou-node.git
 $ cd toutounode
 $ make local-deploy
 ```
+### npm packageのメンテナンス
+portofolioとblogのnginxのコンテナに入る
+
+```
+$ npm outdated
+$ npm update
+```
 
 toutounode.localhost　にアクセス
 
