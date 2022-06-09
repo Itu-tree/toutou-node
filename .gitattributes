@@ -1,10 +1,7 @@
 # See https://github.com/github/linguist/blob/master/docs/overrides.md#generated-code
-blog/html/public/js/app.js linguist-generated
-blog/html/public/js/bootstrap.js linguist-generated
-blog/html/public/js/ckeditor.js linguist-generated
-blog/html/public/js/ckeditor.js.map linguist-generated
-blog/html/public/js/custom.js linguist-generated
-blog/html/public/js/react-app.js linguist-generated
+portfolio/html/js/three.js -linguist-vendored
+portfolio/html/files.js -linguist-vendored
 blog/html/node_modules/* linguist-vendored
 blog/html/resources/ckeditor5-build-classic/* linguist-vendored
+blog/html/public/js/* linguist-generated
 
