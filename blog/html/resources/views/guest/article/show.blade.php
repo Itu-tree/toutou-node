@@ -6,19 +6,19 @@
             <div class="sidebar-item">
                 <div class="make-me-sticky mt-5">
                     <p>
-                        <a href={{ "http://twitter.com/share?text=&url=".url()->current() }} target="_blank"
+                        <a href={{ "http://twitter.com/share?text=&url=" .url()->current() }} target="_blank"
                             rel="nofollow noopener noreferrer">
                             <span class="fab fa-twitter-square fa-2x"></span>
                         </a>
                     </p>
                     <p>
-                        <a href={{ "https://social-plugins.line.me/lineit/share?url=".url()->current() }}
+                        <a href={{ "https://social-plugins.line.me/lineit/share?url=" .url()->current() }}
                             target="_blank" rel="nofollow noopener noreferrer">
                             <span class="fab fa-line fa-2x" style="color:forestgreen;"></span>
                         </a>
                     </p>
                     <p>
-                        <a href={{"https://www.facebook.com/sharer/sharer.php?u=".url()->current()}} target="_blank"
+                        <a href={{"https://www.facebook.com/sharer/sharer.php?u=".url()->current()}} target=" _blank"
                             rel="nofollow noopener noreferrer">
                             <span class="fab fa-facebook-square fa-2x"></span>
                         </a>
@@ -49,13 +49,12 @@
                 </div>
                 <div class="card-body">
                     <p>
-                        更新:{{ date("Y/m/d",strtotime($article->updated_at))  }}
+                        更新:{{ date("Y/m/d",strtotime($article->updated_at)) }}
                         作成：{{ date("Y/m/d",strtotime($article->created_at)) }}
                     </p>
                     <p>
                         @foreach ($article->tags as $tag)
-                        <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light"
-                            target=" _blank" rel="noopener noreferrer">
+                        <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light">
                             <i class="fas fa-tag"></i> {{ $tag->name }}
                         </a>
                         @endforeach
@@ -77,8 +76,7 @@
                     <h4>タグ一覧</h4>
                     <p>
                         @foreach ($tags as $tag)
-                        <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light"
-                            target=" _blank" rel="noopener noreferrer">
+                        <a href="{{ route('tag.articles',['tag'=>$tag->id]) }}" class="badge badge-light">
                             <i class="fas fa-tag"></i> {{ $tag->name }}
                             <span class="badge badge-secondary">
                                 {{ $tag->count }}
