@@ -1,4 +1,4 @@
-FROM node:12.16.1-alpine as node
+FROM node:18-alpine as node
 FROM nginx:1.18-alpine
 SHELL ["/bin/ash", "-oeux", "pipefail", "-c"]
 

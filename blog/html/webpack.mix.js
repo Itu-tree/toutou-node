@@ -16,8 +16,6 @@ mix.js('resources/js/react-app.js', 'public/js').react();
 mix.scripts([
    'resources/js/bootstrap-toc.js',
 ], 'public/js/custom.js');
-
-
 mix.sass('resources/sass/app.scss', 'public/css');
 mix.styles([
    'resources/css/bootstrap-toc.css',

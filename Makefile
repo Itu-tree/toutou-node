@@ -6,9 +6,9 @@ local-deploy:
 	docker-compose -f portfolio/docker-compose.yaml up -d 
 	docker-compose -f portfolio/docker-compose.yaml exec -T nginx cp index.local.html index.html
 	docker-compose -f blog/docker-compose.yaml up -d
-	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic && npm install && npm run build && cd ../../"
+	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic/packages/ckeditor5-build-classic && npm install && npm run build && cd ../../../../"
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm install"
-	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm run dev"
+	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm run development"
 	docker-compose -f blog/deploy.yaml exec -T php cp .env.example .env
 	docker-compose -f blog/docker-compose.yaml exec -T php bash -c "composer install"
 	docker-compose -f blog/docker-compose.yaml exec -T php php artisan key:generate
@@ -19,11 +19,11 @@ local-update:
 	docker-compose -f portfolio/docker-compose.yaml up -d 
 	docker-compose -f portfolio/docker-compose.yaml exec -T nginx cp index.local.html index.html
 	docker-compose -f blog/docker-compose.yaml up -d
-	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic && npm install && npm run build && cd ../../"
+	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic/packages/ckeditor5-build-classic && npm install && npm run build && cd ../../../../"
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "rm -rf node_modules"
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm cache clear --force"
 	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm install"
-	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm run dev"
+	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "npm run development"
 	docker-compose -f blog/docker-compose.yaml exec -T php bash -c "composer install"
 prod-deploy:
 	docker network create --driver bridge toutou_shared
@@ -31,7 +31,7 @@ prod-deploy:
 	docker-compose -f portfolio/deploy.yaml up -d 
 	docker-compose -f blog/deploy.yaml up -d
 	docker-compose -f portfolio/deploy.yaml exec -T nginx cp index.prod.html index.html
-	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic && npm install && npm run build && cd ../../"
+	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic/packages/ckeditor5-build-classic && npm install && npm run build && cd ../../../../"
 	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm install --production"
 	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm install vue"
 	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm run prod"
@@ -45,7 +45,7 @@ prod-update:
 	docker-compose -f portfolio/deploy.yaml up -d 
 	docker-compose -f blog/deploy.yaml up -d
 	docker-compose -f portfolio/deploy.yaml exec -T nginx cp index.prod.html index.html
-	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic && npm install && npm run build && cd ../../"
+	docker-compose -f blog/docker-compose.yaml exec -T nginx ash -c "cd resources/ckeditor5-build-classic/packages/ckeditor5-build-classic && npm install && npm run build && cd ../../../../"
 	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "rm -rf node_modules"
 	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm cache clear --force"
 	docker-compose -f blog/deploy.yaml exec -T nginx ash -c "npm install --production"
