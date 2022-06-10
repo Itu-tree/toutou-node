@@ -22,15 +22,26 @@ $ git clone https://github.com/Itu-tree/toutou-node.git
 $ cd toutounode
 $ make local-deploy
 ```
-### npm packageのメンテナンス
-portofolioとblogのnginxのコンテナに入る
+
+# メンテナンス
+
+## npmの管理
+### portofolioとblogのnginxのコンテナ
 
 ```
 $ npm outdated
 $ npm update
 ```
 
-toutounode.localhost　にアクセス
+## CKEditor5の管理
+https://zenn.dev/toutou/scraps/9460ae2702f810
+
+## composerの管理
+
+blog_phpコンテナ内で
+```bash
+/var/www/html $ composer update
+```
 
 # リモートサーバーにデプロイ
 ## コードのクローンとdockerのビルド、サーバーの立ち上げ
