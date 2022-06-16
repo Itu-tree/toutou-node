@@ -9,7 +9,7 @@ window.addEventListener('load', init);
 function init() {
     // サイズを指定
     const width = window.innerWidth;
-    const height = window.innerHeight;
+    const height = document.documentElement.scrollHeight;
 
     let rot = 0;
     let mouseX = 0; // マウス座標
@@ -103,7 +103,7 @@ function init() {
     function onResize() {
         //サイズ取得
         const width = window.innerWidth;
-        const height = window.innerHeight;
+        const height = document.documentElement.scrollHeight;
 
         //レンダラーのサイズを調整する．
         renderer.setPixelRatio(window.devicePixelRatio);
