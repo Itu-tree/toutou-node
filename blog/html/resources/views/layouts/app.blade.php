@@ -30,10 +30,10 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/custom.css') }}" rel="stylesheet">
-    {{-- for article  --}}
+    {{-- for article --}}
     @if(isset($article) && (route('article.show',['article'=>$article->id])===url()->current() ||
     route('admin.article.show',['article'=>$article])===url()->current() ) )
-    {{--  highlight css  --}}
+    {{-- highlight css --}}
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
@@ -42,7 +42,7 @@
     <script>
         hljs.highlightAll();
     </script>
-    {{--  MathJax  --}}
+    {{-- MathJax --}}
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script>
@@ -73,13 +73,13 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                        {{--  <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li> --}}
-                        {{--  <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li> --}}
-                        {{--  @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
@@ -147,7 +147,7 @@
                         <li class="border-bottom pt-1 pb-1"><a class="text-muted"
                                 href="https://twitter.com/__tou__tou">twitter</a></li>
                         <li class="border-bottom pt-1 pb-1"><a class="text-muted"
-                                href="https://www.amazon.co.jp/hz/wishlist/dl/invite/3KiTDNy?ref_=wl_share">ほしいものリスト</a>
+                                href="https://www.amazon.jp/hz/wishlist/ls/270YX7R07JWQA?ref_=wl_share">ほしいものリスト</a>
                         </li>
                     </ul>
                 </div>
