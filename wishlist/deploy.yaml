@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: "wishlist-nginx"
+    volumes:
+      - ./docker/log/nginx:/var/log/nginx
+    environment:
+      - VIRTUAL_HOST=wish.toutounode.com
+      - LETSENCRYPT_HOST=wish.toutounode.com
+networks:
+  default:
+    external:
+      name: toutou_shared
