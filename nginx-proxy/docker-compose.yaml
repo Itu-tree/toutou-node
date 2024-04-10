@@ -17,6 +17,7 @@ services:
 
   letsencrypt-nginx:
     image: jrcs/letsencrypt-nginx-proxy-companion
+    network_mode: host # ホストのネットワークを使用する
     container_name: letsencrypt-nginx
     privileged: true
     volumes:
